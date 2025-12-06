@@ -3,17 +3,30 @@ import pandas as pd
 import json
 from nba_api.stats.static import players
 from nba_api.stats.endpoints import playercareerstats, commonplayerinfo
+# Import custom NBAStatsHTTP wrapper for headers
+from nba_api.stats.library.http import NBAStatsHTTP
 
 # --- CONFIGURATION ---
 MILESTONE_STEP = 1000       # Look for 1k, 5k, 10k, 25k etc.
 WITHIN_POINTS = 250         # Alert if they are this close
 MIN_CAREER_PTS = 3000       # Skip rookies/bench players to speed up scan
 OUTPUT_FILE = "nba_milestones.json"
+
+# --- CRITICAL FIX: INCREASE DELAY ---
+# This significantly lowers the request rate to avoid 429 errors from the server.
+SLEEP_TIME = 1.0 # Pause for 1.0 seconds between each player check
 # ---------------------
+
+# Trick the API into thinking we are a browser (Necessary for GitHub Actions)
+NBAStatsHTTP.headers.update({
+    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
+})
 
 def get_team_abbrev(player_id):
     """Fetches the current team for a player (only called for candidates)."""
     try:
+        # Note: Added a micro-sleep here to break up rapid commonplayerinfo calls
+        time.sleep(0.1) 
         info = commonplayerinfo.CommonPlayerInfo(player_id=player_id)
         df = info.get_data_frames()[0]
         return df['TEAM_ABBREVIATION'].iloc[0]
@@ -28,7 +41,9 @@ def scan_nba_active_players():
     print("Fetching active player list...")
     active_players = players.get_active_players()
     print(f"Found {len(active_players)} active players. Starting scan...")
-    print("(This takes a few minutes due to API rate limits)\n")
+    
+    # Expected runtime: ~500 players * 1.0 sec = 500 seconds (approx 8.3 minutes total)
+    print(f"Expected scan time: Approx. {len(active_players) * SLEEP_TIME / 60:.1f} minutes.")
 
     candidates = []
     
@@ -37,21 +52,18 @@ def scan_nba_active_players():
         pid = p['id']
         name = p['full_name']
         
-        # Progress indicator every 20 players
         if i % 20 == 0:
-            print(f"  Scanning... {i}/{len(active_players)}")
+            print(f"  Scanning... {i}/{len(active_players)} ({name})")
 
         try:
             # Fetch Career Stats
             career = playercareerstats.PlayerCareerStats(player_id=pid)
             df = career.get_data_frames()[0]
             
-            # Sum points (safest way to get true total)
             total_points = df['PTS'].sum()
             
-            # Optimization: Skip players who aren't close to min threshold
             if total_points < MIN_CAREER_PTS:
-                time.sleep(0.3) # Short sleep
+                time.sleep(SLEEP_TIME)
                 continue
 
             # 3. Check Math
@@ -61,7 +73,6 @@ def scan_nba_active_players():
             if needed <= WITHIN_POINTS:
                 print(f"  [!] MATCH: {name} (Needs {int(needed)})")
                 
-                # Fetch team only for matches to save API calls
                 team = get_team_abbrev(pid)
                 
                 candidates.append({
@@ -74,14 +85,17 @@ def scan_nba_active_players():
                 })
 
             # Polite Rate Limiting
-            time.sleep(0.60)
+            time.sleep(SLEEP_TIME)
 
-        except Exception:
-            pass
+        except Exception as e:
+            # If any specific player fails, log the error and take a long nap
+            print(f"CRITICAL API FAILURE for {name}. Taking a 30 second nap...")
+            time.sleep(30)
+            continue
+
 
     # 4. Save to JSON
     if candidates:
-        # Sort by proximity
         candidates.sort(key=lambda x: x['needed'])
         
         with open(OUTPUT_FILE, 'w') as f:
