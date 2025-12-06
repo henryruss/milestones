@@ -8,16 +8,16 @@
         "stat_type": "goals"
     },
     {
-        "player_name": "Alexander Kerfoot",
-        "team": "UTA",
-        "current_stat": 98,
-        "target_milestone": 100,
-        "needed": 2,
+        "player_name": "Kyle Connor",
+        "team": "WPG",
+        "current_stat": 299,
+        "target_milestone": 300,
+        "needed": 1,
         "stat_type": "goals"
     },
     {
-        "player_name": "Alexis Lafreni\u00e8re",
-        "team": "NYR",
+        "player_name": "Trevor Moore",
+        "team": "LAK",
         "current_stat": 98,
         "target_milestone": 100,
         "needed": 2,
@@ -32,14 +32,6 @@
         "stat_type": "goals"
     },
     {
-        "player_name": "Kyle Connor",
-        "team": "WPG",
-        "current_stat": 298,
-        "target_milestone": 300,
-        "needed": 2,
-        "stat_type": "goals"
-    },
-    {
         "player_name": "Miles Wood",
         "team": "CBJ",
         "current_stat": 98,
@@ -48,8 +40,16 @@
         "stat_type": "goals"
     },
     {
-        "player_name": "Trevor Moore",
-        "team": "LAK",
+        "player_name": "Alexander Kerfoot",
+        "team": "UTA",
+        "current_stat": 98,
+        "target_milestone": 100,
+        "needed": 2,
+        "stat_type": "goals"
+    },
+    {
+        "player_name": "Alexis Lafreni\u00e8re",
+        "team": "NYR",
         "current_stat": 98,
         "target_milestone": 100,
         "needed": 2,
@@ -72,10 +72,10 @@
         "stat_type": "goals"
     },
     {
-        "player_name": "Colton Sissons",
-        "team": "VGK",
-        "current_stat": 96,
-        "target_milestone": 100,
+        "player_name": "Tom Wilson",
+        "team": "WSH",
+        "current_stat": 196,
+        "target_milestone": 200,
         "needed": 4,
         "stat_type": "goals"
     },
@@ -90,6 +90,14 @@
     {
         "player_name": "Zemgus Girgensons",
         "team": "TBL",
+        "current_stat": 96,
+        "target_milestone": 100,
+        "needed": 4,
+        "stat_type": "goals"
+    },
+    {
+        "player_name": "Colton Sissons",
+        "team": "VGK",
         "current_stat": 96,
         "target_milestone": 100,
         "needed": 4,
@@ -112,18 +120,18 @@
         "stat_type": "goals"
     },
     {
-        "player_name": "Tom Wilson",
-        "team": "WSH",
-        "current_stat": 195,
-        "target_milestone": 200,
-        "needed": 5,
-        "stat_type": "goals"
-    },
-    {
         "player_name": "Morgan Geekie",
         "team": "BOS",
         "current_stat": 93,
         "target_milestone": 100,
+        "needed": 7,
+        "stat_type": "goals"
+    },
+    {
+        "player_name": "Marcus Johansson",
+        "team": "MIN",
+        "current_stat": 193,
+        "target_milestone": 200,
         "needed": 7,
         "stat_type": "goals"
     },
@@ -136,8 +144,8 @@
         "stat_type": "goals"
     },
     {
-        "player_name": "Marcus Johansson",
-        "team": "MIN",
+        "player_name": "Elias Pettersson",
+        "team": "VAN",
         "current_stat": 193,
         "target_milestone": 200,
         "needed": 7,
@@ -160,11 +168,11 @@
         "stat_type": "goals"
     },
     {
-        "player_name": "Elias Pettersson",
-        "team": "VAN",
-        "current_stat": 193,
+        "player_name": "Roman Josi",
+        "team": "NSH",
+        "current_stat": 192,
         "target_milestone": 200,
-        "needed": 7,
+        "needed": 8,
         "stat_type": "goals"
     },
     {
@@ -176,24 +184,16 @@
         "stat_type": "goals"
     },
     {
-        "player_name": "Roman Josi",
-        "team": "NSH",
-        "current_stat": 192,
-        "target_milestone": 200,
-        "needed": 8,
-        "stat_type": "goals"
-    },
-    {
-        "player_name": "Dylan Cozens",
-        "team": "OTT",
+        "player_name": "Morgan Rielly",
+        "team": "TOR",
         "current_stat": 91,
         "target_milestone": 100,
         "needed": 9,
         "stat_type": "goals"
     },
     {
-        "player_name": "Morgan Rielly",
-        "team": "TOR",
+        "player_name": "Dylan Cozens",
+        "team": "OTT",
         "current_stat": 91,
         "target_milestone": 100,
         "needed": 9,
@@ -232,22 +232,6 @@
         "stat_type": "goals"
     },
     {
-        "player_name": "Brandon Montour",
-        "team": "SEA",
-        "current_stat": 89,
-        "target_milestone": 100,
-        "needed": 11,
-        "stat_type": "goals"
-    },
-    {
-        "player_name": "Pius Suter",
-        "team": "STL",
-        "current_stat": 89,
-        "target_milestone": 100,
-        "needed": 11,
-        "stat_type": "goals"
-    },
-    {
         "player_name": "Taylor Hall",
         "team": "CAR",
         "current_stat": 289,
@@ -264,11 +248,19 @@
         "stat_type": "goals"
     },
     {
-        "player_name": "Mattias Ekholm",
-        "team": "EDM",
-        "current_stat": 88,
+        "player_name": "Pius Suter",
+        "team": "STL",
+        "current_stat": 89,
         "target_milestone": 100,
-        "needed": 12,
+        "needed": 11,
+        "stat_type": "goals"
+    },
+    {
+        "player_name": "Brandon Montour",
+        "team": "SEA",
+        "current_stat": 89,
+        "target_milestone": 100,
+        "needed": 11,
         "stat_type": "goals"
     },
     {
@@ -288,6 +280,30 @@
         "stat_type": "goals"
     },
     {
+        "player_name": "Mattias Ekholm",
+        "team": "EDM",
+        "current_stat": 88,
+        "target_milestone": 100,
+        "needed": 12,
+        "stat_type": "goals"
+    },
+    {
+        "player_name": "Darnell Nurse",
+        "team": "EDM",
+        "current_stat": 86,
+        "target_milestone": 100,
+        "needed": 14,
+        "stat_type": "goals"
+    },
+    {
+        "player_name": "Pavel Buchnevich",
+        "team": "STL",
+        "current_stat": 186,
+        "target_milestone": 200,
+        "needed": 14,
+        "stat_type": "goals"
+    },
+    {
         "player_name": "Bo Horvat",
         "team": "NYI",
         "current_stat": 286,
@@ -296,8 +312,8 @@
         "stat_type": "goals"
     },
     {
-        "player_name": "Pavel Buchnevich",
-        "team": "STL",
+        "player_name": "Jason Robertson",
+        "team": "DAL",
         "current_stat": 186,
         "target_milestone": 200,
         "needed": 14,
@@ -320,34 +336,10 @@
         "stat_type": "goals"
     },
     {
-        "player_name": "Darnell Nurse",
-        "team": "EDM",
-        "current_stat": 86,
-        "target_milestone": 100,
-        "needed": 14,
-        "stat_type": "goals"
-    },
-    {
         "player_name": "Ross Colton",
         "team": "COL",
         "current_stat": 85,
         "target_milestone": 100,
-        "needed": 15,
-        "stat_type": "goals"
-    },
-    {
-        "player_name": "Nic Dowd",
-        "team": "WSH",
-        "current_stat": 85,
-        "target_milestone": 100,
-        "needed": 15,
-        "stat_type": "goals"
-    },
-    {
-        "player_name": "Jason Robertson",
-        "team": "DAL",
-        "current_stat": 185,
-        "target_milestone": 200,
         "needed": 15,
         "stat_type": "goals"
     },
@@ -362,6 +354,14 @@
     {
         "player_name": "John Klingberg",
         "team": "SJS",
+        "current_stat": 85,
+        "target_milestone": 100,
+        "needed": 15,
+        "stat_type": "goals"
+    },
+    {
+        "player_name": "Nic Dowd",
+        "team": "WSH",
         "current_stat": 85,
         "target_milestone": 100,
         "needed": 15,
