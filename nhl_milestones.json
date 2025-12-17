@@ -1,1 +1,82 @@
-[]
+[
+    {
+        "player_name": "Morgan Geekie",
+        "player_id": 8479987,
+        "team": "BOS",
+        "current_stat": 96,
+        "target_milestone": 100,
+        "needed": 4,
+        "image_url": "https://assets.nhle.com/mktg/gs/players/headshots/8479987.png",
+        "stat_type": "goals"
+    },
+    {
+        "player_name": "Kyle Connor",
+        "player_id": 8478398,
+        "team": "WPG",
+        "current_stat": 299,
+        "target_milestone": 300,
+        "needed": 1,
+        "image_url": "https://assets.nhle.com/mktg/gs/players/headshots/8478398.png",
+        "stat_type": "goals"
+    },
+    {
+        "player_name": "John Klingberg",
+        "player_id": 8475906,
+        "team": "SJS",
+        "current_stat": 90,
+        "target_milestone": 100,
+        "needed": 10,
+        "image_url": "https://assets.nhle.com/mktg/gs/players/headshots/8475906.png",
+        "stat_type": "goals"
+    },
+    {
+        "player_name": "Taylor Hall",
+        "player_id": 8475791,
+        "team": "CAR",
+        "current_stat": 291,
+        "target_milestone": 300,
+        "needed": 9,
+        "image_url": "https://assets.nhle.com/mktg/gs/players/headshots/8475791.png",
+        "stat_type": "goals"
+    },
+    {
+        "player_name": "Bo Horvat",
+        "player_id": 8477500,
+        "team": "NYI",
+        "current_stat": 288,
+        "target_milestone": 300,
+        "needed": 12,
+        "image_url": "https://assets.nhle.com/mktg/gs/players/headshots/8477500.png",
+        "stat_type": "goals"
+    },
+    {
+        "player_name": "Ross Colton",
+        "player_id": 8479525,
+        "team": "COL",
+        "current_stat": 85,
+        "target_milestone": 100,
+        "needed": 15,
+        "image_url": "https://assets.nhle.com/mktg/gs/players/headshots/8479525.png",
+        "stat_type": "goals"
+    },
+    {
+        "player_name": "Mattias Ekholm",
+        "player_id": 8475218,
+        "team": "EDM",
+        "current_stat": 89,
+        "target_milestone": 100,
+        "needed": 11,
+        "image_url": "https://assets.nhle.com/mktg/gs/players/headshots/8475218.png",
+        "stat_type": "goals"
+    },
+    {
+        "player_name": "Morgan Rielly",
+        "player_id": 8476853,
+        "team": "TOR",
+        "current_stat": 92,
+        "target_milestone": 100,
+        "needed": 8,
+        "image_url": "https://assets.nhle.com/mktg/gs/players/headshots/8476853.png",
+        "stat_type": "goals"
+    }
+]

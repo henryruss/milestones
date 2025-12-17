@@ -1,326 +1,137 @@
-<<<<<<< HEAD
 [
     {
-        "player_name": "Naz Reid",
-        "team": "MIN",
-        "current_stat": 4997,
+        "player_name": "Nickeil Alexander-Walker",
+        "player_id": 1629638,
+        "current_stat": 4822,
         "target_milestone": 5000,
-        "needed": 3,
-        "stat_type": "points"
-    },
-    {
-        "player_name": "Donovan Mitchell",
-        "team": "CLE",
-        "current_stat": 13993,
-        "target_milestone": 14000,
-        "needed": 7,
-        "stat_type": "points"
-    },
-    {
-        "player_name": "Jeff Green",
-        "team": "HOU",
-        "current_stat": 17990,
-        "target_milestone": 18000,
-        "needed": 10,
-        "stat_type": "points"
-    },
-    {
-        "player_name": "Collin Sexton",
-        "team": "CHA",
-        "current_stat": 7984,
-        "target_milestone": 8000,
-        "needed": 16,
-        "stat_type": "points"
-    },
-    {
-        "player_name": "Jalen Williams",
-        "team": "OKC",
-        "current_stat": 3965,
-        "target_milestone": 4000,
-        "needed": 35,
-        "stat_type": "points"
-    },
-    {
-        "player_name": "Kelly Oubre Jr.",
-        "team": "PHI",
-        "current_stat": 9944,
-        "target_milestone": 10000,
-        "needed": 56,
-        "stat_type": "points"
-    },
-    {
-        "player_name": "Dennis Schr\u00f6der",
-        "team": "SAC",
-        "current_stat": 14930,
-        "target_milestone": 15000,
-        "needed": 70,
-        "stat_type": "points"
-    },
-    {
-        "player_name": "Tyrese Maxey",
-        "team": "PHI",
-        "current_stat": 6898,
-        "target_milestone": 7000,
-        "needed": 102,
-        "stat_type": "points"
-    },
-    {
-        "player_name": "Dwight Powell",
-        "team": "DAL",
-        "current_stat": 4887,
-        "target_milestone": 5000,
-        "needed": 113,
-        "stat_type": "points"
-    },
-    {
-        "player_name": "Jaren Jackson Jr.",
-        "team": "MEM",
-        "current_stat": 7886,
-        "target_milestone": 8000,
-        "needed": 114,
-        "stat_type": "points"
+        "needed": 178,
+        "image_url": "https://cdn.nba.com/headshots/nba/latest/1040x760/1629638.png",
+        "team": "NBA"
     },
     {
         "player_name": "Marvin Bagley III",
-        "team": "WAS",
-        "current_stat": 4885,
+        "player_id": 1628963,
+        "current_stat": 4929,
         "target_milestone": 5000,
-        "needed": 115,
-        "stat_type": "points"
+        "needed": 71,
+        "image_url": "https://cdn.nba.com/headshots/nba/latest/1040x760/1628963.png",
+        "team": "NBA"
     },
     {
-        "player_name": "Trey Murphy III",
-        "team": "NOP",
-        "current_stat": 3877,
-        "target_milestone": 4000,
-        "needed": 123,
-        "stat_type": "points"
+        "player_name": "Zach Edey",
+        "player_id": 1641744,
+        "current_stat": 760,
+        "target_milestone": 1000,
+        "needed": 240,
+        "image_url": "https://cdn.nba.com/headshots/nba/latest/1040x760/1641744.png",
+        "team": "NBA"
     },
     {
-        "player_name": "Gary Harris",
-        "team": "MIL",
-        "current_stat": 6862,
-        "target_milestone": 7000,
-        "needed": 138,
-        "stat_type": "points"
+        "player_name": "Anthony Gill",
+        "player_id": 1630264,
+        "current_stat": 790,
+        "target_milestone": 1000,
+        "needed": 210,
+        "image_url": "https://cdn.nba.com/headshots/nba/latest/1040x760/1630264.png",
+        "team": "NBA"
     },
     {
-        "player_name": "Steven Adams",
-        "team": "HOU",
-        "current_stat": 6855,
-        "target_milestone": 7000,
-        "needed": 145,
-        "stat_type": "points"
+        "player_name": "Jalen Duren",
+        "player_id": 1631105,
+        "current_stat": 2786,
+        "target_milestone": 3000,
+        "needed": 214,
+        "image_url": "https://cdn.nba.com/headshots/nba/latest/1040x760/1631105.png",
+        "team": "NBA"
     },
     {
-        "player_name": "Nikola Joki\u0107",
-        "team": "DEN",
-        "current_stat": 16853,
-        "target_milestone": 17000,
-        "needed": 147,
-        "stat_type": "points"
+        "player_name": "Jeff Green",
+        "player_id": 201145,
+        "current_stat": 17992,
+        "target_milestone": 18000,
+        "needed": 8,
+        "image_url": "https://cdn.nba.com/headshots/nba/latest/1040x760/201145.png",
+        "team": "NBA"
     },
     {
-        "player_name": "Luka Don\u010di\u0107",
-        "team": "LAL",
-        "current_stat": 14850,
-        "target_milestone": 15000,
-        "needed": 150,
-        "stat_type": "points"
-    },
-    {
-        "player_name": "Deandre Ayton",
-        "team": "LAL",
-        "current_stat": 6849,
-        "target_milestone": 7000,
-        "needed": 151,
-        "stat_type": "points"
-    },
-    {
-        "player_name": "Evan Mobley",
-        "team": "CLE",
-        "current_stat": 4848,
-        "target_milestone": 5000,
-        "needed": 152,
-        "stat_type": "points"
-    },
-    {
-        "player_name": "Ivica Zubac",
-        "team": "LAC",
-        "current_stat": 6845,
-        "target_milestone": 7000,
-        "needed": 155,
-        "stat_type": "points"
-    },
-    {
-        "player_name": "Bogdan Bogdanovi\u0107",
-        "team": "LAC",
-        "current_stat": 7839,
-        "target_milestone": 8000,
-        "needed": 161,
-        "stat_type": "points"
-    },
-    {
-        "player_name": "John Collins",
-        "team": "LAC",
-        "current_stat": 7834,
-        "target_milestone": 8000,
-        "needed": 166,
-        "stat_type": "points"
-    },
-    {
-        "player_name": "Stephen Curry",
-        "team": "GSW",
-        "current_stat": 25832,
-        "target_milestone": 26000,
-        "needed": 168,
-        "stat_type": "points"
-    },
-    {
-        "player_name": "Georges Niang",
-        "team": "UTA",
-        "current_stat": 4830,
-        "target_milestone": 5000,
-        "needed": 170,
-        "stat_type": "points"
-    },
-    {
-        "player_name": "Daniel Gafford",
-        "team": "DAL",
-        "current_stat": 4825,
-        "target_milestone": 5000,
-        "needed": 175,
-        "stat_type": "points"
-    },
-    {
-        "player_name": "Draymond Green",
-        "team": "GSW",
-        "current_stat": 7825,
-        "target_milestone": 8000,
-        "needed": 175,
-        "stat_type": "points"
-    },
-    {
-        "player_name": "Gary Trent Jr.",
-        "team": "MIL",
-        "current_stat": 6816,
-        "target_milestone": 7000,
-        "needed": 184,
-        "stat_type": "points"
-    },
-    {
-        "player_name": "Lauri Markkanen",
-        "team": "UTA",
-        "current_stat": 8808,
-        "target_milestone": 9000,
-        "needed": 192,
-        "stat_type": "points"
+        "player_name": "Isaac Okoro",
+        "player_id": 1630171,
+        "current_stat": 2851,
+        "target_milestone": 3000,
+        "needed": 149,
+        "image_url": "https://cdn.nba.com/headshots/nba/latest/1040x760/1630171.png",
+        "team": "NBA"
     },
     {
         "player_name": "Bobby Portis",
-        "team": "MIL",
-        "current_stat": 8805,
+        "player_id": 1626171,
+        "current_stat": 8849,
         "target_milestone": 9000,
-        "needed": 195,
-        "stat_type": "points"
+        "needed": 151,
+        "image_url": "https://cdn.nba.com/headshots/nba/latest/1040x760/1626171.png",
+        "team": "NBA"
     },
     {
-        "player_name": "Dejounte Murray",
-        "team": "NOP",
-        "current_stat": 7803,
-        "target_milestone": 8000,
-        "needed": 197,
-        "stat_type": "points"
-    },
-    {
-        "player_name": "Paul George",
-        "team": "PHI",
-        "current_stat": 18798,
-        "target_milestone": 19000,
-        "needed": 202,
-        "stat_type": "points"
-    },
-    {
-        "player_name": "RJ Barrett",
-        "team": "TOR",
-        "current_stat": 8792,
-        "target_milestone": 9000,
-        "needed": 208,
-        "stat_type": "points"
-    },
-    {
-        "player_name": "Klay Thompson",
-        "team": "DAL",
-        "current_stat": 16789,
-        "target_milestone": 17000,
-        "needed": 211,
-        "stat_type": "points"
-    },
-    {
-        "player_name": "Derrick Jones Jr.",
-        "team": "LAC",
-        "current_stat": 3787,
-        "target_milestone": 4000,
-        "needed": 213,
-        "stat_type": "points"
-    },
-    {
-        "player_name": "James Harden",
-        "team": "LAC",
-        "current_stat": 30784,
-        "target_milestone": 31000,
-        "needed": 216,
-        "stat_type": "points"
+        "player_name": "Orlando Robinson",
+        "player_id": 1631115,
+        "current_stat": 828,
+        "target_milestone": 1000,
+        "needed": 172,
+        "image_url": "https://cdn.nba.com/headshots/nba/latest/1040x760/1631115.png",
+        "team": "NBA"
     },
     {
         "player_name": "Jayson Tatum",
-        "team": "BOS",
+        "player_id": 1628369,
         "current_stat": 13784,
         "target_milestone": 14000,
         "needed": 216,
-        "stat_type": "points"
-    },
-    {
-        "player_name": "Al Horford",
-        "team": "GSW",
-        "current_stat": 14778,
-        "target_milestone": 15000,
-        "needed": 222,
-        "stat_type": "points"
-    },
-    {
-        "player_name": "Nickeil Alexander-Walker",
-        "team": "ATL",
-        "current_stat": 4771,
-        "target_milestone": 5000,
-        "needed": 229,
-        "stat_type": "points"
+        "image_url": "https://cdn.nba.com/headshots/nba/latest/1040x760/1628369.png",
+        "team": "NBA"
     },
     {
         "player_name": "Derrick White",
-        "team": "BOS",
-        "current_stat": 7766,
+        "player_id": 1628401,
+        "current_stat": 7835,
         "target_milestone": 8000,
-        "needed": 234,
-        "stat_type": "points"
+        "needed": 165,
+        "image_url": "https://cdn.nba.com/headshots/nba/latest/1040x760/1628401.png",
+        "team": "NBA"
     },
     {
-        "player_name": "Domantas Sabonis",
-        "team": "SAC",
-        "current_stat": 11761,
-        "target_milestone": 12000,
-        "needed": 239,
-        "stat_type": "points"
+        "player_name": "Robert Williams III",
+        "player_id": 1629057,
+        "current_stat": 1786,
+        "target_milestone": 2000,
+        "needed": 214,
+        "image_url": "https://cdn.nba.com/headshots/nba/latest/1040x760/1629057.png",
+        "team": "NBA"
     },
     {
-        "player_name": "Andrew Wiggins",
-        "team": "MIA",
-        "current_stat": 16761,
-        "target_milestone": 17000,
-        "needed": 239,
-        "stat_type": "points"
+        "player_name": "Vince Williams Jr.",
+        "player_id": 1631246,
+        "current_stat": 887,
+        "target_milestone": 1000,
+        "needed": 113,
+        "image_url": "https://cdn.nba.com/headshots/nba/latest/1040x760/1631246.png",
+        "team": "NBA"
+    },
+    {
+        "player_name": "Julian Strawther",
+        "player_id": 1631124,
+        "current_stat": 848,
+        "target_milestone": 1000,
+        "needed": 152,
+        "image_url": "https://cdn.nba.com/headshots/nba/latest/1040x760/1631124.png",
+        "team": "NBA"
+    },
+    {
+        "player_name": "Brandon Williams",
+        "player_id": 1630314,
+        "current_stat": 896,
+        "target_milestone": 1000,
+        "needed": 104,
+        "image_url": "https://cdn.nba.com/headshots/nba/latest/1040x760/1630314.png",
+        "team": "NBA"
     }
 ]
-=======
-[]
->>>>>>> 523df789df2b5f0f6a5ae7130457aa6b22f1413c
