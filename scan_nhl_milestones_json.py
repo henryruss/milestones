@@ -1,123 +1,99 @@
+import os
 import time
-import pandas as pd
 import json
-import random 
-from nba_api.stats.static import players
-from nba_api.stats.endpoints import playercareerstats, commonplayerinfo
-from nba_api.stats.library.http import NBAStatsHTTP
+import requests
+import random
 
 # --- CONFIGURATION ---
-MILESTONE_STEP = 1000       
-WITHIN_POINTS = 250         
-MIN_CAREER_PTS = 3000       
-OUTPUT_FILE = "nba_milestones.json"
-# ---------------------
+STAT_TYPE = 'goals'         
+MILESTONE_STEP = 100        
+WITHIN_RANGE = 15           
+MIN_CAREER_STAT = 80        
+OUTPUT_FILE = "nhl_milestones.json"
+API_KEY = os.environ.get('SCRAPERAPI_KEY', '')
 
-# Trick the API into thinking we are a browser 
-NBAStatsHTTP.headers.update({
-    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
-})
+TEAM_ABBREVIATIONS = [
+    "ANA", "BOS", "BUF", "CGY", "CAR", "CHI", "COL", "CBJ", "DAL", "DET",
+    "EDM", "FLA", "LAK", "MIN", "MTL", "NSH", "NJD", "NYI", "NYR", "OTT",
+    "PHI", "PIT", "SJS", "SEA", "STL", "TBL", "TOR", "UTA", "VAN", "VGK", 
+    "WSH", "WPG"
+]
 
-def api_call_with_retry(endpoint_class, **kwargs):
-    """Executes API call with exponential backoff for robustness."""
-    max_retries = 3
-    delay = 2  # Start with 2 seconds delay
-    
-    for attempt in range(max_retries):
-        try:
-            time.sleep(random.uniform(0.1, 0.5)) # Jitter before the attempt
-            endpoint = endpoint_class(**kwargs)
-            return endpoint.get_data_frames()
-        except Exception as e:
-            if attempt < max_retries - 1:
-                print(f"    [!] API Timeout/Error (Attempt {attempt + 1}). Retrying in {delay}s...")
-                time.sleep(delay)
-                delay *= 2  # Exponential backoff: 2s, 4s, 8s
-            else:
-                raise e # Raise the last error
+def get_proxy_url(url):
+    """Wraps the URL with ScraperAPI to bypass IP blocks."""
+    if not API_KEY:
+        return url
+    return f"http://api.scraperapi.com?api_key={API_KEY}&url={url}"
 
-def get_team_abbrev(player_id):
-    """Fetches the current team for a player (only called for candidates)."""
-    try:
-        # We now rely on the internal API call retry logic, so no external sleep needed here
-        info_data = api_call_with_retry(commonplayerinfo.CommonPlayerInfo, player_id=player_id)
-        if info_data:
-            return info_data[0]['TEAM_ABBREVIATION'].iloc[0]
-        return "N/A"
-    except:
-        return "N/A"
-
-def scan_nba_active_players():
-    print(f"--- NBA MILESTONE SCANNER (JSON MODE) ---")
-    print(f"Target: Players within {WITHIN_POINTS} pts of a {MILESTONE_STEP} pt mark.")
-    
-    # 1. Get all active players
-    print("Fetching active player list...")
-    active_players = players.get_active_players()
-    print(f"Found {len(active_players)} active players. Starting scan...")
-    
-    player_list = active_players
-    
-    # Estimate run time based on max 3 retries (3 attempts * 500 players * ~2s base delay)
-    # This estimate is complex, so let's provide a rough benchmark
-    print(f"Estimated time: This will be highly variable but should be under 20 minutes.")
-
+def scan_nhl():
+    print(f"--- NHL PROXY SCANNER ---")
+    active_player_ids = set()
     candidates = []
-    
-    # 2. Loop through players
-    for i, p in enumerate(player_list):
-        pid = p['id']
-        name = p['full_name']
-        
-        if i % 20 == 0:
-            print(f"\n  Scanning... {i}/{len(player_list)} ({name})")
 
+    # 1. Build Roster List (Using Proxy)
+    print("Fetching active rosters...")
+    for team in TEAM_ABBREVIATIONS:
         try:
-            # Fetch Career Stats using resilient call
-            career_data = api_call_with_retry(playercareerstats.PlayerCareerStats, player_id=pid)
-            df = career_data[0]
-            
-            total_points = df['PTS'].sum()
-            
-            if total_points < MIN_CAREER_PTS:
-                continue
-
-            # 3. Check Math
-            next_milestone = ((int(total_points) // MILESTONE_STEP) + 1) * MILESTONE_STEP
-            needed = next_milestone - total_points
-            
-            if needed <= WITHIN_POINTS:
-                print(f"  [!] MATCH: {name} (Needs {int(needed)})")
-                
-                # Fetch team only for matches
-                team = get_team_abbrev(pid)
-                
-                candidates.append({
-                    "player_name": name,
-                    "team": team,
-                    "current_stat": int(total_points),
-                    "target_milestone": next_milestone,
-                    "needed": int(needed),
-                    "stat_type": "points"
-                })
-
+            url = f"https://api-web.nhle.com/v1/roster/{team}/current"
+            r = requests.get(get_proxy_url(url), timeout=30)
+            if r.status_code == 200:
+                data = r.json()
+                for group in ['forwards', 'defensemen', 'goalies']:
+                    for player in data.get(group, []):
+                        full_name = f"{player['firstName']['default']} {player['lastName']['default']}"
+                        active_player_ids.add((player['id'], full_name))
+            time.sleep(0.1) # Small gap to be polite to the proxy
         except Exception as e:
-            # If all retries fail, skip the player entirely and move on quickly
-            print(f"  [X] Failed all retries for {name}. Skipping.")
+            print(f"Error fetching roster for {team}: {e}")
+            
+    player_list = list(active_player_ids)
+    print(f"Scanning {len(player_list)} players...")
+
+    # 2. Scan Individual Players
+    for i, (pid, name) in enumerate(player_list):
+        if i % 25 == 0: print(f"Checked {i}/{len(player_list)} players...")
+            
+        try:
+            url = f"https://api-web.nhle.com/v1/player/{pid}/landing"
+            r = requests.get(get_proxy_url(url), timeout=30)
+            
+            if r.status_code == 200:
+                data = r.json()
+                career_totals = data.get('careerTotals', {}).get('regularSeason', {})
+                career_val = career_totals.get(STAT_TYPE, 0)
+                
+                if career_val < MIN_CAREER_STAT:
+                    continue
+
+                next_m = ((int(career_val) // MILESTONE_STEP) + 1) * MILESTONE_STEP
+                needed = next_m - career_val
+                
+                if needed <= WITHIN_RANGE:
+                    print(f"!!! Milestone Alert: {name} needs {int(needed)}")
+                    
+                    # NHL Headshot CDN URL (Direct and Free)
+                    img_url = f"https://img.nhl.com/images/headshots/current/168x168/{pid}.png"
+                    
+                    candidates.append({
+                        "player_name": name,
+                        "player_id": pid,
+                        "team": data.get('currentTeamAbbrev', 'NHL'),
+                        "current_stat": int(career_val),
+                        "target_milestone": next_m,
+                        "needed": int(needed),
+                        "image_url": img_url,
+                        "stat_type": STAT_TYPE
+                    })
+            
+            time.sleep(0.1)
+            
+        except Exception:
             continue
 
-
-    # 4. Save to JSON
-    if candidates:
-        candidates.sort(key=lambda x: x['needed'])
-        
-        with open(OUTPUT_FILE, 'w') as f:
-            json.dump(candidates, f, indent=4)
-        print(f"\n[SUCCESS] Saved {len(candidates)} players to '{OUTPUT_FILE}'")
-    else:
-        print("No players found within range.")
-        with open(OUTPUT_FILE, 'w') as f:
-            json.dump([], f)
+    # Save to JSON for the website
+    with open(OUTPUT_FILE, 'w') as f:
+        json.dump(candidates, f, indent=4)
+    print(f"Saved {len(candidates)} NHL candidates.")
 
 if __name__ == "__main__":
-    scan_nba_active_players()
+    scan_nhl()
