@@ -3,219 +3,186 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Milestone Tracker</title>
+    <title>Milestone Watch Dashboard</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        /* Dynamic Glow Effects */
-        .glow-nba { text-shadow: 0 0 15px rgba(249, 115, 22, 0.6); }
-        .glow-nhl { text-shadow: 0 0 15px rgba(59, 130, 246, 0.6); }
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap');
         
-        /* Smooth transition for theme changes */
-        body, .theme-text, .theme-border, .theme-bg {
-            transition: all 0.3s ease;
+        body { font-family: 'Inter', sans-serif; }
+        
+        .glow-nba { text-shadow: 0 0 20px rgba(249, 115, 22, 0.4); }
+        .glow-nhl { text-shadow: 0 0 20px rgba(59, 130, 246, 0.4); }
+        
+        .player-card {
+            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease;
+        }
+        
+        .player-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 10px 10px -5px rgba(0, 0, 0, 0.4);
         }
 
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: #111827; }
-        ::-webkit-scrollbar-thumb { background: #374151; border-radius: 4px; }
-        ::-webkit-scrollbar-thumb:hover { background: #4b5563; }
+        .status-pill {
+            backdrop-filter: blur(4px);
+            background: rgba(255, 255, 255, 0.05);
+        }
     </style>
 </head>
-<body class="bg-gray-950 text-gray-100 min-h-screen font-sans">
+<body class="bg-black text-white min-h-screen">
 
-    <div class="container mx-auto px-4 py-8">
-        
-        <!-- HEADER & TOGGLE -->
-        <header class="text-center mb-8">
-            <!-- League Toggles -->
-            <div class="flex justify-center gap-4 mb-6">
-                <button onclick="switchLeague('nba')" id="btn-nba" class="px-6 py-2 rounded-full font-bold text-lg border-2 border-gray-700 hover:border-orange-500 hover:text-orange-500 transition-all">
-                    🏀 NBA
+    <!-- Navigation / Header -->
+    <div class="container mx-auto px-4 py-12">
+        <header class="text-center mb-16">
+            <div class="flex flex-wrap justify-center gap-4 mb-10">
+                <button onclick="switchLeague('nba')" id="btn-nba" class="group relative px-8 py-3 rounded-full border-2 border-orange-600 font-bold overflow-hidden transition-all hover:bg-orange-600">
+                    <span class="relative z-10 flex items-center gap-2">
+                        <span>🏀</span> NBA HOOPS
+                    </span>
                 </button>
-                <button onclick="switchLeague('nhl')" id="btn-nhl" class="px-6 py-2 rounded-full font-bold text-lg border-2 border-gray-700 hover:border-blue-500 hover:text-blue-500 transition-all">
-                    🏒 NHL
+                <button onclick="switchLeague('nhl')" id="btn-nhl" class="group relative px-8 py-3 rounded-full border-2 border-blue-600 font-bold overflow-hidden transition-all hover:bg-blue-600">
+                    <span class="relative z-10 flex items-center gap-2">
+                        <span>🏒</span> NHL PUCK
+                    </span>
                 </button>
-            </div>
-
-            <!-- Dynamic Title -->
-            <h1 id="main-title" class="text-5xl md:text-7xl font-bold mb-2 tracking-tighter uppercase transition-all duration-300">
-                MILESTONE WATCH
-            </h1>
-            <p id="sub-title" class="text-gray-400 text-lg">Select a league to view approaching milestones</p>
-            <p id="status-message" class="text-sm text-gray-600 mt-2">Ready</p>
-        </header>
-
-        <!-- DATA TABLE -->
-        <div class="max-w-5xl mx-auto bg-gray-900 rounded-xl shadow-2xl overflow-hidden border border-gray-800">
-            <div class="overflow-x-auto">
-                <table class="w-full text-left">
-                    <thead class="bg-gray-800 text-gray-400 uppercase text-xs tracking-wider">
-                        <tr>
-                            <th class="p-5">Player</th>
-                            <th class="p-5">Team</th>
-                            <th class="p-5 text-center" id="col-current">Current</th>
-                            <th class="p-5 text-center">Target</th>
-                            <th class="p-5 text-center font-bold" id="header-needs">Needs</th>
-                        </tr>
-                    </thead>
-                    <tbody id="stats-body" class="divide-y divide-gray-800">
-                        <!-- Rows inserted by JS -->
-                    </tbody>
-                </table>
             </div>
             
-            <!-- Loading / Empty States -->
-            <div id="loading" class="hidden p-12 text-center text-gray-500">
-                <div class="inline-block animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-gray-400 mb-2"></div>
-                <p>Scouting the league...</p>
-            </div>
+            <h1 id="title" class="text-6xl md:text-8xl font-black tracking-tighter glow-nba italic text-orange-500 uppercase">
+                MILESTONE WATCH
+            </h1>
+            <p id="sub-title" class="text-gray-400 text-xl mt-4 max-w-2xl mx-auto">
+                Real-time tracking of legends approaching the history books.
+            </p>
+        </header>
+
+        <!-- Main Display Grid -->
+        <div id="player-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+            <!-- Cards are injected here -->
+        </div>
+        
+        <!-- Empty/Loading State -->
+        <div id="state-container" class="flex flex-col items-center justify-center py-32 text-gray-600">
+            <div id="loading-spinner" class="hidden animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-orange-500 mb-4"></div>
+            <p id="state-text" class="text-2xl font-medium">Select a league to view the countdowns</p>
         </div>
     </div>
 
     <script>
-        // --- CONFIGURATION ---
-        const DATA_FILES = {
-            nba: 'nba_milestones.json',
-            nhl: 'nhl_milestones.json'
-        };
-
-        const THEMES = {
-            nba: {
-                title: "HOOP TRACKER",
-                color: "text-orange-500",
-                glow: "glow-nba",
-                statName: "Points",
-                needsColor: "text-orange-400"
-            },
-            nhl: {
-                title: "PUCK TRACKER",
-                color: "text-blue-500",
-                glow: "glow-nhl",
-                statName: "Goals",
-                needsColor: "text-blue-400"
-            }
-        };
-
-        // Demo Data for Fallback
+        // Mock data for initial testing if local files aren't found
         const MOCK_DATA = {
             nba: [
-                { player_name: "Demo: LeBron James", team: "LAL", current_stat: 39950, target_milestone: 40000, needed: 50 },
-                { player_name: "Demo: Curry", team: "GSW", current_stat: 23990, target_milestone: 24000, needed: 10 }
+                { player_name: "LeBron James", team: "LAL", current_stat: 39950, target_milestone: 40000, needed: 50, image_url: "https://ak-static.cms.nba.com/wp-content/uploads/headshots/nba/latest/260x190/2544.png" },
+                { player_name: "Kevin Durant", team: "PHX", current_stat: 28290, target_milestone: 29000, needed: 710, image_url: "https://ak-static.cms.nba.com/wp-content/uploads/headshots/nba/latest/260x190/201142.png" }
             ],
             nhl: [
-                { player_name: "Demo: Ovechkin", team: "WSH", current_stat: 851, target_milestone: 894, needed: 43 },
-                { player_name: "Demo: Crosby", team: "PIT", current_stat: 590, target_milestone: 600, needed: 10 }
+                { player_name: "Alex Ovechkin", team: "WSH", current_stat: 853, target_milestone: 894, needed: 41, image_url: "https://img.nhl.com/images/headshots/current/168x168/8471214.png" },
+                { player_name: "Connor McDavid", team: "EDM", current_stat: 982, target_milestone: 1000, needed: 18, image_url: "https://img.nhl.com/images/headshots/current/168x168/8478402.png" }
             ]
         };
 
-        let currentLeague = 'nba';
-
-        // --- FUNCTIONS ---
-
         async function switchLeague(league) {
-            currentLeague = league;
-            updateTheme(league);
-            await loadData(league);
-        }
-
-        function updateTheme(league) {
-            const theme = THEMES[league];
-            const title = document.getElementById('main-title');
-            const sub = document.getElementById('sub-title');
-            const btnNBA = document.getElementById('btn-nba');
-            const btnNHL = document.getElementById('btn-nhl');
-            const needsHeader = document.getElementById('header-needs');
-            const currentHeader = document.getElementById('col-current');
-
-            // Reset Buttons
-            btnNBA.className = `px-6 py-2 rounded-full font-bold text-lg border-2 border-gray-700 text-gray-500 hover:border-orange-500 hover:text-orange-500 transition-all`;
-            btnNHL.className = `px-6 py-2 rounded-full font-bold text-lg border-2 border-gray-700 text-gray-500 hover:border-blue-500 hover:text-blue-500 transition-all`;
-
-            // Activate Selected Button
-            if (league === 'nba') {
-                btnNBA.className = `px-6 py-2 rounded-full font-bold text-lg border-2 border-orange-500 text-orange-500 shadow-[0_0_15px_rgba(249,115,22,0.4)] transition-all`;
-            } else {
-                btnNHL.className = `px-6 py-2 rounded-full font-bold text-lg border-2 border-blue-500 text-blue-500 shadow-[0_0_15px_rgba(59,130,246,0.4)] transition-all`;
-            }
-
-            // Update Text & Colors
-            title.innerText = theme.title;
-            title.className = `text-5xl md:text-7xl font-bold mb-2 tracking-tighter uppercase transition-all duration-300 ${theme.color} ${theme.glow}`;
-            
-            sub.innerText = `Tracking approaching ${theme.statName} milestones`;
-            currentHeader.innerText = `Current ${theme.statName}`;
-            needsHeader.className = `p-5 text-center font-bold ${theme.needsColor}`;
-        }
-
-        async function loadData(league) {
-            const tbody = document.getElementById('stats-body');
-            const loading = document.getElementById('loading');
-            const statusMsg = document.getElementById('status-message');
+            const grid = document.getElementById('player-grid');
+            const stateText = document.getElementById('state-text');
+            const spinner = document.getElementById('loading-spinner');
+            const title = document.getElementById('title');
+            const subTitle = document.getElementById('sub-title');
             
             // UI Reset
-            tbody.innerHTML = '';
-            loading.classList.remove('hidden');
-            statusMsg.innerText = "Fetching data...";
-            statusMsg.className = "text-sm text-gray-500 mt-2";
-
-            let players = [];
+            grid.innerHTML = '';
+            spinner.classList.remove('hidden');
+            stateText.innerText = "Scanning the league...";
+            
+            // Theme Update
+            if (league === 'nba') {
+                title.className = "text-6xl md:text-8xl font-black tracking-tighter glow-nba italic text-orange-500 uppercase";
+                title.innerText = "HOOP TRACKER";
+                subTitle.innerText = "Tracking the climb to scoring immortality.";
+            } else {
+                title.className = "text-6xl md:text-8xl font-black tracking-tighter glow-nhl italic text-blue-500 uppercase";
+                title.innerText = "PUCK TRACKER";
+                subTitle.innerText = "Counting down the goals to legendary status.";
+            }
 
             try {
-                // Fetch JSON
-                const response = await fetch(DATA_FILES[league]);
-                if (!response.ok) throw new Error("File not found");
+                // Try to fetch real data
+                const res = await fetch(`${league}_milestones.json`);
+                let players = [];
                 
-                players = await response.json();
-                
-                // Success Timestamp
-                const now = new Date();
-                statusMsg.innerText = `Updated: ${now.toLocaleTimeString()}`;
-                statusMsg.className = "text-sm text-green-500 mt-2 font-mono";
+                if (res.ok) {
+                    players = await res.json();
+                } else {
+                    console.warn("Real data not found, showing demo data.");
+                    players = MOCK_DATA[league];
+                }
 
-            } catch (error) {
-                console.warn("Fetch failed, loading mock data.", error);
-                players = MOCK_DATA[league];
-                statusMsg.innerHTML = `<span class="text-red-500">Offline Mode (Demo Data)</span>`;
+                spinner.classList.add('hidden');
+                
+                if (players.length === 0) {
+                    stateText.innerText = "No players currently within the milestone threshold.";
+                    return;
+                }
+
+                stateText.innerText = ""; // Clear state text
+                
+                players.forEach(p => {
+                    const card = document.createElement('div');
+                    card.className = "player-card bg-gray-900/50 rounded-3xl p-8 border border-white/10 flex flex-col items-center text-center relative overflow-hidden backdrop-blur-sm";
+                    
+                    const accentColor = league === 'nba' ? 'text-orange-500' : 'text-blue-500';
+                    const progressColor = league === 'nba' ? 'bg-orange-500' : 'bg-blue-500';
+                    const urgency = p.needed <= 10 ? 'text-red-500 animate-pulse' : accentColor;
+                    
+                    // Progress Calculation
+                    const prevMilestone = p.target_milestone - 1000;
+                    const progress = ((p.current_stat - prevMilestone) / 1000) * 100;
+
+                    card.innerHTML = `
+                        <!-- Player Image with specialized background -->
+                        <div class="relative mb-6">
+                            <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black/40 rounded-full"></div>
+                            <img src="${p.image_url}" 
+                                 onerror="this.src='https://via.placeholder.com/260x190/111827/FFFFFF?text=${p.player_name.split(' ').join('+')}'" 
+                                 class="w-40 h-40 object-cover rounded-full border-4 border-white/5 bg-gray-800 shadow-2xl">
+                        </div>
+
+                        <h2 class="text-3xl font-black mb-1 tracking-tight">${p.player_name}</h2>
+                        <div class="status-pill px-4 py-1 rounded-full text-xs font-bold text-gray-400 tracking-widest uppercase mb-6">
+                            ${p.team}
+                        </div>
+                        
+                        <!-- Progress Bar -->
+                        <div class="w-full bg-white/5 h-3 rounded-full mb-2 p-0.5 border border-white/5">
+                            <div class="${progressColor} h-full rounded-full shadow-lg" style="width: ${Math.max(5, progress)}%"></div>
+                        </div>
+                        <div class="flex justify-between w-full text-[10px] font-bold text-gray-500 tracking-tighter mb-8 px-1">
+                            <span>${prevMilestone.toLocaleString()}</span>
+                            <span>${p.target_milestone.toLocaleString()}</span>
+                        </div>
+
+                        <!-- Stats Grid -->
+                        <div class="grid grid-cols-2 gap-4 w-full mb-8">
+                            <div class="bg-white/5 rounded-2xl py-3 border border-white/5">
+                                <p class="text-[10px] text-gray-500 font-bold uppercase tracking-widest">Current</p>
+                                <p class="text-xl font-bold">${p.current_stat.toLocaleString()}</p>
+                            </div>
+                            <div class="bg-white/5 rounded-2xl py-3 border border-white/5">
+                                <p class="text-[10px] text-gray-500 font-bold uppercase tracking-widest">Milestone</p>
+                                <p class="text-xl font-bold">${p.target_milestone.toLocaleString()}</p>
+                            </div>
+                        </div>
+
+                        <!-- Countdown -->
+                        <div class="w-full">
+                            <p class="text-[11px] text-gray-400 font-black uppercase tracking-[0.2em] mb-1">Remaining</p>
+                            <p class="text-6xl font-black ${urgency} tracking-tighter">${p.needed}</p>
+                        </div>
+                    `;
+                    grid.appendChild(card);
+                });
+            } catch (e) {
+                spinner.classList.add('hidden');
+                stateText.innerText = "Error loading data. Verify your JSON files are generated.";
             }
-
-            loading.classList.add('hidden');
-
-            if (!players || players.length === 0) {
-                tbody.innerHTML = `<tr><td colspan="5" class="p-8 text-center text-gray-600 italic">No milestones in sight right now.</td></tr>`;
-                return;
-            }
-
-            // Render Rows
-            const theme = THEMES[league];
-            
-            players.forEach(player => {
-                const tr = document.createElement('tr');
-                tr.className = "hover:bg-gray-800 transition-colors border-b border-gray-800 last:border-0";
-                
-                // Urgency Calculation
-                let urgencyClass = "text-gray-400";
-                // Tighter threshold for NHL (goals) vs NBA (points)
-                const urgentThreshold = league === 'nhl' ? 3 : 50; 
-                const warningThreshold = league === 'nhl' ? 8 : 150;
-
-                if (player.needed <= urgentThreshold) urgencyClass = "text-red-400 font-extrabold animate-pulse";
-                else if (player.needed <= warningThreshold) urgencyClass = theme.needsColor + " font-bold";
-
-                tr.innerHTML = `
-                    <td class="p-5 font-bold text-white text-lg">${player.player_name}</td>
-                    <td class="p-5 text-gray-500 font-mono text-sm">${player.team}</td>
-                    <td class="p-5 text-center font-mono text-gray-300">${player.current_stat.toLocaleString()}</td>
-                    <td class="p-5 text-center font-mono font-bold ${theme.color}">${player.target_milestone.toLocaleString()}</td>
-                    <td class="p-5 text-center text-2xl ${urgencyClass}">${player.needed}</td>
-                `;
-                tbody.appendChild(tr);
-            });
         }
-
-        // Initialize with NBA
-        switchLeague('nba');
-
     </script>
 </body>
 </html>
