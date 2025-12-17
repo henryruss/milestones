@@ -8,74 +8,93 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap');
         
-        body { font-family: 'Inter', sans-serif; }
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background-color: #050505;
+            background-image: radial-gradient(circle at top right, #111, #050505);
+        }
         
         .glow-nba { text-shadow: 0 0 20px rgba(249, 115, 22, 0.4); }
         .glow-nhl { text-shadow: 0 0 20px rgba(59, 130, 246, 0.4); }
         
         .player-card {
-            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            backdrop-filter: blur(12px);
         }
         
         .player-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 10px 10px -5px rgba(0, 0, 0, 0.4);
+            transform: translateY(-12px) scale(1.02);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.8);
+            border-color: rgba(255, 255, 255, 0.2);
         }
 
         .status-pill {
-            backdrop-filter: blur(4px);
-            background: rgba(255, 255, 255, 0.05);
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
         }
+
+        .progress-container {
+            background: rgba(255, 255, 255, 0.05);
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.3);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #050505; }
+        ::-webkit-scrollbar-thumb { background: #222; border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: #333; }
     </style>
 </head>
-<body class="bg-black text-white min-h-screen">
+<body class="text-white min-h-screen">
 
-    <!-- Navigation / Header -->
     <div class="container mx-auto px-4 py-12">
+        <!-- Header Section -->
         <header class="text-center mb-16">
             <div class="flex flex-wrap justify-center gap-4 mb-10">
-                <button onclick="switchLeague('nba')" id="btn-nba" class="group relative px-8 py-3 rounded-full border-2 border-orange-600 font-bold overflow-hidden transition-all hover:bg-orange-600">
-                    <span class="relative z-10 flex items-center gap-2">
-                        <span>🏀</span> NBA HOOPS
+                <button onclick="switchLeague('nba')" id="btn-nba" class="group relative px-10 py-4 rounded-2xl border-2 border-orange-600/30 font-black tracking-widest overflow-hidden transition-all hover:border-orange-500 active:scale-95">
+                    <span class="relative z-10 flex items-center gap-3">
+                        <span class="text-xl">🏀</span> NBA HOOPS
                     </span>
                 </button>
-                <button onclick="switchLeague('nhl')" id="btn-nhl" class="group relative px-8 py-3 rounded-full border-2 border-blue-600 font-bold overflow-hidden transition-all hover:bg-blue-600">
-                    <span class="relative z-10 flex items-center gap-2">
-                        <span>🏒</span> NHL PUCK
+                <button onclick="switchLeague('nhl')" id="btn-nhl" class="group relative px-10 py-4 rounded-2xl border-2 border-blue-600/30 font-black tracking-widest overflow-hidden transition-all hover:border-blue-500 active:scale-95">
+                    <span class="relative z-10 flex items-center gap-3">
+                        <span class="text-xl">🏒</span> NHL PUCK
                     </span>
                 </button>
             </div>
             
-            <h1 id="title" class="text-6xl md:text-8xl font-black tracking-tighter glow-nba italic text-orange-500 uppercase">
+            <h1 id="title" class="text-7xl md:text-9xl font-black tracking-tighter glow-nba italic text-orange-500 uppercase select-none transition-all duration-500">
                 MILESTONE WATCH
             </h1>
-            <p id="sub-title" class="text-gray-400 text-xl mt-4 max-w-2xl mx-auto">
-                Real-time tracking of legends approaching the history books.
+            <p id="sub-title" class="text-gray-500 text-lg md:text-xl mt-6 max-w-2xl mx-auto font-medium">
+                Live countdowns to sports history. Updated daily.
             </p>
         </header>
 
-        <!-- Main Display Grid -->
+        <!-- Dynamic Grid -->
         <div id="player-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-            <!-- Cards are injected here -->
+            <!-- Cards Injected via JS -->
         </div>
         
-        <!-- Empty/Loading State -->
-        <div id="state-container" class="flex flex-col items-center justify-center py-32 text-gray-600">
-            <div id="loading-spinner" class="hidden animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-orange-500 mb-4"></div>
-            <p id="state-text" class="text-2xl font-medium">Select a league to view the countdowns</p>
+        <!-- Loading & Empty States -->
+        <div id="state-container" class="flex flex-col items-center justify-center py-32 text-gray-700">
+            <div id="loading-spinner" class="hidden mb-6">
+                <div class="w-12 h-12 border-4 border-white/10 border-t-orange-500 rounded-full animate-spin"></div>
+            </div>
+            <p id="state-text" class="text-2xl font-bold tracking-tight">Select a league to load the trackers</p>
         </div>
     </div>
 
     <script>
-        // Mock data for initial testing if local files aren't found
+        // Fallback data if local JSON files are missing during testing
         const MOCK_DATA = {
             nba: [
-                { player_name: "LeBron James", team: "LAL", current_stat: 39950, target_milestone: 40000, needed: 50, image_url: "https://ak-static.cms.nba.com/wp-content/uploads/headshots/nba/latest/260x190/2544.png" },
-                { player_name: "Kevin Durant", team: "PHX", current_stat: 28290, target_milestone: 29000, needed: 710, image_url: "https://ak-static.cms.nba.com/wp-content/uploads/headshots/nba/latest/260x190/201142.png" }
+                { player_name: "LeBron James", team: "LAL", current_stat: 40474, target_milestone: 41000, needed: 526, image_url: "https://cdn.nba.com/headshots/nba/latest/1040x760/2544.png" },
+                { player_name: "Kevin Durant", team: "PHX", current_stat: 28924, target_milestone: 30000, needed: 1076, image_url: "https://cdn.nba.com/headshots/nba/latest/1040x760/201142.png" }
             ],
             nhl: [
-                { player_name: "Alex Ovechkin", team: "WSH", current_stat: 853, target_milestone: 894, needed: 41, image_url: "https://img.nhl.com/images/headshots/current/168x168/8471214.png" },
-                { player_name: "Connor McDavid", team: "EDM", current_stat: 982, target_milestone: 1000, needed: 18, image_url: "https://img.nhl.com/images/headshots/current/168x168/8478402.png" }
+                { player_name: "Alex Ovechkin", team: "WSH", current_stat: 863, target_milestone: 894, needed: 31, image_url: "https://assets.nhle.com/mktg/gs/players/headshots/8471214.png" },
+                { player_name: "Sidney Crosby", team: "PIT", current_stat: 592, target_milestone: 600, needed: 8, image_url: "https://assets.nhle.com/mktg/gs/players/headshots/8471675.png" }
             ]
         };
 
@@ -86,38 +105,38 @@
             const title = document.getElementById('title');
             const subTitle = document.getElementById('sub-title');
             
-            // UI Reset
+            // Visual feedback for switch
             grid.innerHTML = '';
             spinner.classList.remove('hidden');
-            stateText.innerText = "Scanning the league...";
+            stateText.innerText = "Analyzing recent games...";
             
-            // Theme Update
+            // Update Theme Colors & Text
             if (league === 'nba') {
-                title.className = "text-6xl md:text-8xl font-black tracking-tighter glow-nba italic text-orange-500 uppercase";
+                title.className = "text-7xl md:text-9xl font-black tracking-tighter glow-nba italic text-orange-500 uppercase transition-all duration-500";
                 title.innerText = "HOOP TRACKER";
-                subTitle.innerText = "Tracking the climb to scoring immortality.";
+                subTitle.innerText = "Tracking the elite climb to scoring immortality.";
             } else {
-                title.className = "text-6xl md:text-8xl font-black tracking-tighter glow-nhl italic text-blue-500 uppercase";
+                title.className = "text-7xl md:text-9xl font-black tracking-tighter glow-nhl italic text-blue-500 uppercase transition-all duration-500";
                 title.innerText = "PUCK TRACKER";
-                subTitle.innerText = "Counting down the goals to legendary status.";
+                subTitle.innerText = "Chasing the Great One and the goals that define a legacy.";
             }
 
             try {
-                // Try to fetch real data
+                // Fetch the JSON generated by your scanners
                 const res = await fetch(`${league}_milestones.json`);
                 let players = [];
                 
                 if (res.ok) {
                     players = await res.json();
                 } else {
-                    console.warn("Real data not found, showing demo data.");
+                    console.warn("Using demo data because JSON file was not found.");
                     players = MOCK_DATA[league];
                 }
 
                 spinner.classList.add('hidden');
                 
                 if (players.length === 0) {
-                    stateText.innerText = "No players currently within the milestone threshold.";
+                    stateText.innerText = "No players currently within the tracking range.";
                     return;
                 }
 
@@ -125,62 +144,65 @@
                 
                 players.forEach(p => {
                     const card = document.createElement('div');
-                    card.className = "player-card bg-gray-900/50 rounded-3xl p-8 border border-white/10 flex flex-col items-center text-center relative overflow-hidden backdrop-blur-sm";
+                    card.className = "player-card bg-zinc-900/40 rounded-[2.5rem] p-8 border border-white/5 flex flex-col items-center text-center relative overflow-hidden";
                     
                     const accentColor = league === 'nba' ? 'text-orange-500' : 'text-blue-500';
-                    const progressColor = league === 'nba' ? 'bg-orange-500' : 'bg-blue-500';
-                    const urgency = p.needed <= 10 ? 'text-red-500 animate-pulse' : accentColor;
+                    const barColor = league === 'nba' ? 'bg-orange-500' : 'bg-blue-500';
+                    const urgency = p.needed <= 15 ? 'text-red-500 animate-pulse' : accentColor;
                     
-                    // Progress Calculation
-                    const prevMilestone = p.target_milestone - 1000;
-                    const progress = ((p.current_stat - prevMilestone) / 1000) * 100;
+                    // Simple progress calculation based on last milestone step
+                    const step = league === 'nba' ? 1000 : 100;
+                    const prevMilestone = p.target_milestone - step;
+                    const progress = ((p.current_stat - prevMilestone) / step) * 100;
 
                     card.innerHTML = `
-                        <!-- Player Image with specialized background -->
-                        <div class="relative mb-6">
-                            <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black/40 rounded-full"></div>
+                        <!-- Profile Image -->
+                        <div class="relative mb-8">
+                            <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black/60 rounded-full"></div>
                             <img src="${p.image_url}" 
-                                 onerror="this.src='https://via.placeholder.com/260x190/111827/FFFFFF?text=${p.player_name.split(' ').join('+')}'" 
-                                 class="w-40 h-40 object-cover rounded-full border-4 border-white/5 bg-gray-800 shadow-2xl">
+                                 onerror="this.src='https://via.placeholder.com/260x190/111/fff?text=${p.player_name.split(' ').join('+')}'" 
+                                 class="w-44 h-44 object-cover rounded-full border-4 border-white/5 bg-zinc-800 shadow-2xl">
                         </div>
 
-                        <h2 class="text-3xl font-black mb-1 tracking-tight">${p.player_name}</h2>
-                        <div class="status-pill px-4 py-1 rounded-full text-xs font-bold text-gray-400 tracking-widest uppercase mb-6">
+                        <h2 class="text-3xl font-black mb-1 tracking-tight leading-tight">${p.player_name}</h2>
+                        <div class="status-pill px-5 py-1.5 rounded-full text-[10px] font-black text-zinc-400 tracking-[0.2em] uppercase mb-8">
                             ${p.team}
                         </div>
                         
-                        <!-- Progress Bar -->
-                        <div class="w-full bg-white/5 h-3 rounded-full mb-2 p-0.5 border border-white/5">
-                            <div class="${progressColor} h-full rounded-full shadow-lg" style="width: ${Math.max(5, progress)}%"></div>
-                        </div>
-                        <div class="flex justify-between w-full text-[10px] font-bold text-gray-500 tracking-tighter mb-8 px-1">
-                            <span>${prevMilestone.toLocaleString()}</span>
-                            <span>${p.target_milestone.toLocaleString()}</span>
-                        </div>
-
-                        <!-- Stats Grid -->
-                        <div class="grid grid-cols-2 gap-4 w-full mb-8">
-                            <div class="bg-white/5 rounded-2xl py-3 border border-white/5">
-                                <p class="text-[10px] text-gray-500 font-bold uppercase tracking-widest">Current</p>
-                                <p class="text-xl font-bold">${p.current_stat.toLocaleString()}</p>
+                        <!-- Progress Bar Container -->
+                        <div class="w-full px-2 mb-10">
+                            <div class="progress-container w-full h-2.5 rounded-full mb-3 overflow-hidden">
+                                <div class="${barColor} h-full rounded-full transition-all duration-1000" style="width: ${Math.max(5, Math.min(100, progress))}%"></div>
                             </div>
-                            <div class="bg-white/5 rounded-2xl py-3 border border-white/5">
-                                <p class="text-[10px] text-gray-500 font-bold uppercase tracking-widest">Milestone</p>
-                                <p class="text-xl font-bold">${p.target_milestone.toLocaleString()}</p>
+                            <div class="flex justify-between text-[10px] font-bold text-zinc-600 tracking-wider">
+                                <span>${prevMilestone.toLocaleString()}</span>
+                                <span>${p.target_milestone.toLocaleString()}</span>
                             </div>
                         </div>
 
-                        <!-- Countdown -->
+                        <!-- Stats Box -->
+                        <div class="grid grid-cols-2 gap-4 w-full mb-10">
+                            <div class="bg-white/5 rounded-3xl py-4 border border-white/5">
+                                <p class="text-[9px] text-zinc-500 font-black uppercase tracking-widest mb-1">Total</p>
+                                <p class="text-2xl font-bold tracking-tight">${p.current_stat.toLocaleString()}</p>
+                            </div>
+                            <div class="bg-white/5 rounded-3xl py-4 border border-white/5">
+                                <p class="text-[9px] text-zinc-500 font-black uppercase tracking-widest mb-1">Target</p>
+                                <p class="text-2xl font-bold tracking-tight">${p.target_milestone.toLocaleString()}</p>
+                            </div>
+                        </div>
+
+                        <!-- Huge Needed Number -->
                         <div class="w-full">
-                            <p class="text-[11px] text-gray-400 font-black uppercase tracking-[0.2em] mb-1">Remaining</p>
-                            <p class="text-6xl font-black ${urgency} tracking-tighter">${p.needed}</p>
+                            <p class="text-[10px] text-zinc-400 font-black uppercase tracking-[0.3em] mb-1">Remaining</p>
+                            <p class="text-7xl font-black ${urgency} tracking-tighter leading-none">${p.needed}</p>
                         </div>
                     `;
                     grid.appendChild(card);
                 });
             } catch (e) {
                 spinner.classList.add('hidden');
-                stateText.innerText = "Error loading data. Verify your JSON files are generated.";
+                stateText.innerText = "Connection lost. Please check your data source.";
             }
         }
     </script>
