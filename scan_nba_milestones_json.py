@@ -7,14 +7,20 @@ import urllib.parse
 import concurrent.futures
 from nba_api.stats.static import players 
 
+# --- LOAD ENVIRONMENT VARIABLES ---
+try:
+    from dotenv import load_dotenv
+    load_dotenv()
+except ImportError:
+    pass
+
 # --- CONFIG ---
 MILESTONE_STEP = 1000
 WITHIN_POINTS = 250 
 OUTPUT_FILE = "nba_milestones.json"
-MAX_WORKERS = 5  # Reduced to 5 for GitHub Actions stability
+MAX_WORKERS = 5  
 API_KEY = os.environ.get('SCRAPERAPI_KEY', '')
 
-# Headers are critical for direct connections
 HEADERS = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
     "Accept": "application/json, text/plain, */*",
@@ -31,28 +37,38 @@ def fetch_url(url):
     if API_KEY:
         try:
             encoded_url = urllib.parse.quote(url, safe='')
+            # Added render=true as it sometimes helps with NBA's strict checks
             proxy_url = f"http://api.scraperapi.com?api_key={API_KEY}&url={encoded_url}&keep_headers=true"
-            response = requests.get(proxy_url, headers=HEADERS, timeout=15)
+            
+            # Increased timeout to 30s because proxies can be slow
+            response = requests.get(proxy_url, headers=HEADERS, timeout=30)
             
             if response.status_code == 200:
                 return response.json()
             elif response.status_code == 403:
-                print(f"    [!] Proxy Auth Failed (Check Key/Quota). Switching to Direct...")
+                print(f"    [!] Proxy Auth Failed (Check Key/Quota). Status: {response.status_code}")
+            else:
+                print(f"    [!] Proxy Warning: Received status {response.status_code}")
+                
         except Exception as e:
-            # Proxy failed, just proceed to direct
-            pass
+            # Print the actual error so we know WHY the proxy failed
+            print(f"    [!] Proxy Connection Failed: {str(e)}")
 
     # 2. Direct Connection Fallback
+    # Only runs if proxy failed or no key provided
+    if API_KEY:
+        print("    [i] Falling back to Direct Connection...")
+
     try:
-        # Add a small delay for direct requests to be polite
-        time.sleep(random.uniform(0.5, 1.5)) 
-        response = requests.get(url, headers=HEADERS, timeout=15)
+        # Add a longer delay for direct requests to avoid "Connection Reset"
+        time.sleep(random.uniform(1.0, 2.0)) 
+        response = requests.get(url, headers=HEADERS, timeout=10)
         if response.status_code == 200:
             return response.json()
         else:
-            print(f"    [X] Direct Failed: {response.status_code}")
+            print(f"    [X] Direct Failed: Status {response.status_code}")
     except Exception as e:
-        print(f"    [X] Connection Error: {e}")
+        print(f"    [X] Direct Connection Error: {e}")
     
     return None
 
@@ -102,6 +118,13 @@ def process_player(p):
 def scan_nba():
     print(f"--- NBA DUAL-MODE SCANNER ---")
     
+    # DEBUG: Check if API Key is loaded
+    if API_KEY:
+        print(f"[OK] API Key detected: {API_KEY[:4]}...{API_KEY[-4:]}")
+    else:
+        print("[WARNING] No API Key detected. Using Direct Connection (High risk of blocking).")
+        print("          Make sure you have a .env file with SCRAPERAPI_KEY=...")
+
     # STEP 1: Get Player List
     print("Loading active player list...")
     try:
@@ -120,7 +143,7 @@ def scan_nba():
         
         for future in concurrent.futures.as_completed(future_to_player):
             completed_count += 1
-            if completed_count % 10 == 0:
+            if completed_count % 5 == 0:
                 print(f"  Progress: {completed_count}/{len(all_players)} checked...", end='\r')
 
             try:
