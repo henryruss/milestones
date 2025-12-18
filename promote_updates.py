@@ -11,13 +11,13 @@ except ImportError:
     praw = None
 
 # --- CONFIG ---
-SITE_URL = "https://statwatch.live" # Replace with your actual domain
+SITE_URL = "https://statwatch.live" 
 DISCORD_WEBHOOK = os.environ.get('DISCORD_WEBHOOK_URL')
 REDDIT_CLIENT_ID = os.environ.get('REDDIT_CLIENT_ID')
 REDDIT_SECRET = os.environ.get('REDDIT_SECRET')
 REDDIT_USER = os.environ.get('REDDIT_USER')
 REDDIT_PASS = os.environ.get('REDDIT_PASS')
-TARGET_SUBREDDIT = "u_" + REDDIT_USER if REDDIT_USER else "test" # Defaults to posting on your own profile
+TARGET_SUBREDDIT = "u_" + REDDIT_USER if REDDIT_USER else "test" 
 
 def load_data(filename):
     if not os.path.exists(filename):
@@ -54,15 +54,17 @@ def generate_report():
     if nba_urgent:
         lines.append("## 🏀 NBA Watch")
         for p in nba_urgent:
+            pts_label = "point" if p['needed'] == 1 else "points"
             lines.append(f"* **{p['player_name']}** ({p['team']}) is approaching **{p['target_milestone']:,} PTS**")
-            lines.append(f"  * Needs {p['needed']} more points")
+            lines.append(f"  * Needs {p['needed']} more {pts_label}")
         lines.append("")
 
     if nhl_urgent:
         lines.append("## 🏒 NHL Watch")
         for p in nhl_urgent:
+            goals_label = "goal" if p['needed'] == 1 else "goals"
             lines.append(f"* **{p['player_name']}** ({p['team']}) is approaching **{p['target_milestone']:,} GOALS**")
-            lines.append(f"  * Needs {p['needed']} more goals")
+            lines.append(f"  * Needs {p['needed']} more {goals_label}")
         lines.append("")
 
     lines.append("---")
@@ -73,9 +75,21 @@ def generate_report():
 
 def save_to_file(content):
     filename = "daily_digest.txt"
+    
+    # Clean up the Markdown syntax for the local text file
+    # This makes the text file look pretty for humans (stripping **, ##, etc)
+    clean_content = content \
+        .replace("**", "") \
+        .replace("## ", "") \
+        .replace("# ", "") \
+        .replace("> *", "") \
+        .replace("*", "") \
+        .replace("  * ", "\t- ") \
+        .replace("* ", "• ") 
+        
     try:
         with open(filename, 'w', encoding='utf-8') as f:
-            f.write(content)
+            f.write(clean_content)
         print(f"[Success] Newsletter preview saved to {filename}")
     except Exception as e:
         print(f"[Error] Could not save text file: {e}")
@@ -130,7 +144,7 @@ if __name__ == "__main__":
     report = generate_report()
     
     if report:
-        # Always generate the local file
+        # Generate the clean local file
         save_to_file(report)
         
         # Only attempt remote posting if keys exist
