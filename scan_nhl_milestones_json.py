@@ -62,8 +62,13 @@ def process_player(player_tuple):
             needed = next_m - career_val
             
             if needed <= WITHIN_RANGE:
-                # Modern NHL Headshot CDN
-                img_url = f"https://assets.nhle.com/mktg/gs/players/headshots/{pid}.png"
+                # --- IMAGE URL FIX ---
+                # 1. Try to get the official URL directly from the API response
+                img_url = data.get('headshot', '')
+                
+                # 2. If missing, fallback to the legacy BAMGrid server (Most reliable fallback)
+                if not img_url:
+                    img_url = f"https://cms.nhl.bamgrid.com/images/headshots/current/168x168/{pid}.jpg"
                 
                 return {
                     "player_name": name,

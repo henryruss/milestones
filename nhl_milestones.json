@@ -1,72 +1,72 @@
 [
     {
-        "player_name": "Morgan Geekie",
-        "player_id": 8479987,
-        "team": "BOS",
+        "player_name": "Zemgus Girgensons",
+        "player_id": 8476878,
+        "team": "TBL",
         "current_stat": 96,
         "target_milestone": 100,
         "needed": 4,
-        "image_url": "https://assets.nhle.com/mktg/gs/players/headshots/8479987.png",
+        "image_url": "https://assets.nhle.com/mugs/nhl/20252026/TBL/8476878.png",
         "stat_type": "goals"
     },
     {
-        "player_name": "Kyle Connor",
-        "player_id": 8478398,
-        "team": "WPG",
-        "current_stat": 299,
-        "target_milestone": 300,
-        "needed": 1,
-        "image_url": "https://assets.nhle.com/mktg/gs/players/headshots/8478398.png",
+        "player_name": "Josh Norris",
+        "player_id": 8480064,
+        "team": "BUF",
+        "current_stat": 93,
+        "target_milestone": 100,
+        "needed": 7,
+        "image_url": "https://assets.nhle.com/mugs/nhl/20252026/BUF/8480064.png",
         "stat_type": "goals"
     },
     {
-        "player_name": "John Klingberg",
-        "player_id": 8475906,
-        "team": "SJS",
+        "player_name": "Nic Dowd",
+        "player_id": 8475343,
+        "team": "WSH",
+        "current_stat": 86,
+        "target_milestone": 100,
+        "needed": 14,
+        "image_url": "https://assets.nhle.com/mugs/nhl/20252026/WSH/8475343.png",
+        "stat_type": "goals"
+    },
+    {
+        "player_name": "Marcus Johansson",
+        "player_id": 8475149,
+        "team": "MIN",
+        "current_stat": 196,
+        "target_milestone": 200,
+        "needed": 4,
+        "image_url": "https://assets.nhle.com/mugs/nhl/20252026/MIN/8475149.png",
+        "stat_type": "goals"
+    },
+    {
+        "player_name": "Jason Robertson",
+        "player_id": 8480027,
+        "team": "DAL",
+        "current_stat": 188,
+        "target_milestone": 200,
+        "needed": 12,
+        "image_url": "https://assets.nhle.com/mugs/nhl/20252026/DAL/8480027.png",
+        "stat_type": "goals"
+    },
+    {
+        "player_name": "Kasperi Kapanen",
+        "player_id": 8477953,
+        "team": "EDM",
         "current_stat": 90,
         "target_milestone": 100,
         "needed": 10,
-        "image_url": "https://assets.nhle.com/mktg/gs/players/headshots/8475906.png",
+        "image_url": "https://assets.nhle.com/mugs/nhl/20252026/EDM/8477953.png",
         "stat_type": "goals"
     },
     {
-        "player_name": "Taylor Hall",
-        "player_id": 8475791,
-        "team": "CAR",
-        "current_stat": 291,
-        "target_milestone": 300,
-        "needed": 9,
-        "image_url": "https://assets.nhle.com/mktg/gs/players/headshots/8475791.png",
-        "stat_type": "goals"
-    },
-    {
-        "player_name": "Bo Horvat",
-        "player_id": 8477500,
+        "player_name": "Anders Lee",
+        "player_id": 8475314,
         "team": "NYI",
-        "current_stat": 288,
+        "current_stat": 297,
         "target_milestone": 300,
-        "needed": 12,
-        "image_url": "https://assets.nhle.com/mktg/gs/players/headshots/8477500.png",
-        "stat_type": "goals"
-    },
-    {
-        "player_name": "Ross Colton",
-        "player_id": 8479525,
-        "team": "COL",
-        "current_stat": 85,
-        "target_milestone": 100,
-        "needed": 15,
-        "image_url": "https://assets.nhle.com/mktg/gs/players/headshots/8479525.png",
-        "stat_type": "goals"
-    },
-    {
-        "player_name": "Mattias Ekholm",
-        "player_id": 8475218,
-        "team": "EDM",
-        "current_stat": 89,
-        "target_milestone": 100,
-        "needed": 11,
-        "image_url": "https://assets.nhle.com/mktg/gs/players/headshots/8475218.png",
+        "needed": 3,
+        "image_url": "https://assets.nhle.com/mugs/nhl/20252026/NYI/8475314.png",
         "stat_type": "goals"
     },
     {
@@ -76,7 +76,17 @@
         "current_stat": 92,
         "target_milestone": 100,
         "needed": 8,
-        "image_url": "https://assets.nhle.com/mktg/gs/players/headshots/8476853.png",
+        "image_url": "https://assets.nhle.com/mugs/nhl/20252026/TOR/8476853.png",
+        "stat_type": "goals"
+    },
+    {
+        "player_name": "Nathan MacKinnon",
+        "player_id": 8477492,
+        "team": "COL",
+        "current_stat": 395,
+        "target_milestone": 400,
+        "needed": 5,
+        "image_url": "https://assets.nhle.com/mugs/nhl/20252026/COL/8477492.png",
         "stat_type": "goals"
     }
 ]
