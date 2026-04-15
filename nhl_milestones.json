@@ -1,464 +1,5 @@
 [
     {
-        "player_name": "Pius Suter",
-        "player_id": 8480459,
-        "team": "STL",
-        "current_stat": 95,
-        "target_milestone": 100,
-        "needed": 5,
-        "image_url": "https://assets.nhle.com/mugs/nhl/20252026/STL/8480459.png",
-        "stat_type": "goals",
-        "season_avg": 0.21,
-        "last_5_avg": 0.2,
-        "next_game": {
-            "opponent": "PIT",
-            "date": "Wed, Apr 15 @ 01:30 AM",
-            "is_home": true
-        }
-    },
-    {
-        "player_name": "Kaapo Kakko",
-        "player_id": 8481554,
-        "team": "SEA",
-        "current_stat": 84,
-        "target_milestone": 100,
-        "needed": 16,
-        "image_url": "https://assets.nhle.com/mugs/nhl/20252026/SEA/8481554.png",
-        "stat_type": "goals",
-        "season_avg": 0.21,
-        "last_5_avg": 0.0,
-        "next_game": {
-            "opponent": "VGK",
-            "date": "Thu, Apr 16 @ 02:00 AM",
-            "is_home": false
-        }
-    },
-    {
-        "player_name": "Andrei Kuzmenko",
-        "player_id": 8483808,
-        "team": "LAK",
-        "current_stat": 85,
-        "target_milestone": 100,
-        "needed": 15,
-        "image_url": "https://assets.nhle.com/mugs/nhl/20252026/LAK/8483808.png",
-        "stat_type": "goals",
-        "season_avg": 0.25,
-        "last_5_avg": 0.4,
-        "next_game": {
-            "opponent": "VAN",
-            "date": "Wed, Apr 15 @ 02:00 AM",
-            "is_home": false
-        }
-    },
-    {
-        "player_name": "Roope Hintz",
-        "player_id": 8478449,
-        "team": "DAL",
-        "current_stat": 190,
-        "target_milestone": 200,
-        "needed": 10,
-        "image_url": "https://assets.nhle.com/mugs/nhl/20252026/DAL/8478449.png",
-        "stat_type": "goals",
-        "season_avg": 0.28,
-        "last_5_avg": 0.0,
-        "next_game": {
-            "opponent": "BUF",
-            "date": "Wed, Apr 15 @ 11:00 PM",
-            "is_home": false
-        }
-    },
-    {
-        "player_name": "Ryan Nugent-Hopkins",
-        "player_id": 8476454,
-        "team": "EDM",
-        "current_stat": 290,
-        "target_milestone": 300,
-        "needed": 10,
-        "image_url": "https://assets.nhle.com/mugs/nhl/20252026/EDM/8476454.png",
-        "stat_type": "goals",
-        "season_avg": 0.27,
-        "last_5_avg": 0.2,
-        "next_game": {
-            "opponent": "VAN",
-            "date": "Fri, Apr 17 @ 01:00 AM",
-            "is_home": true
-        }
-    },
-    {
-        "player_name": "Matty Beniers",
-        "player_id": 8482665,
-        "team": "SEA",
-        "current_stat": 82,
-        "target_milestone": 100,
-        "needed": 18,
-        "image_url": "https://assets.nhle.com/mugs/nhl/20252026/SEA/8482665.png",
-        "stat_type": "goals",
-        "season_avg": 0.25,
-        "last_5_avg": 0.2,
-        "next_game": {
-            "opponent": "VGK",
-            "date": "Thu, Apr 16 @ 02:00 AM",
-            "is_home": false
-        }
-    },
-    {
-        "player_name": "Damon Severson",
-        "player_id": 8476923,
-        "team": "CBJ",
-        "current_stat": 81,
-        "target_milestone": 100,
-        "needed": 19,
-        "image_url": "https://assets.nhle.com/mugs/nhl/20252026/CBJ/8476923.png",
-        "stat_type": "goals",
-        "season_avg": 0.11,
-        "last_5_avg": 0.6,
-        "next_game": {
-            "opponent": "WSH",
-            "date": "Tue, Apr 14 @ 11:00 PM",
-            "is_home": true
-        }
-    },
-    {
-        "player_name": "Vince Dunn",
-        "player_id": 8478407,
-        "team": "SEA",
-        "current_stat": 86,
-        "target_milestone": 100,
-        "needed": 14,
-        "image_url": "https://assets.nhle.com/mugs/nhl/20252026/SEA/8478407.png",
-        "stat_type": "goals",
-        "season_avg": 0.14,
-        "last_5_avg": 0.0,
-        "next_game": {
-            "opponent": "VGK",
-            "date": "Thu, Apr 16 @ 02:00 AM",
-            "is_home": false
-        }
-    },
-    {
-        "player_name": "Ryan McDonagh",
-        "player_id": 8474151,
-        "team": "TBL",
-        "current_stat": 86,
-        "target_milestone": 100,
-        "needed": 14,
-        "image_url": "https://assets.nhle.com/mugs/nhl/20252026/TBL/8474151.png",
-        "stat_type": "goals",
-        "season_avg": 0.12,
-        "last_5_avg": 0.0,
-        "next_game": {
-            "opponent": "NYR",
-            "date": "Wed, Apr 15 @ 11:00 PM",
-            "is_home": true
-        }
-    },
-    {
-        "player_name": "Mason Marchment",
-        "player_id": 8478975,
-        "team": "CBJ",
-        "current_stat": 95,
-        "target_milestone": 100,
-        "needed": 5,
-        "image_url": "https://assets.nhle.com/mugs/nhl/20252026/CBJ/8478975.png",
-        "stat_type": "goals",
-        "season_avg": 0.28,
-        "last_5_avg": 0.2,
-        "next_game": {
-            "opponent": "WSH",
-            "date": "Tue, Apr 14 @ 11:00 PM",
-            "is_home": true
-        }
-    },
-    {
-        "player_name": "Ilya Mikheyev",
-        "player_id": 8481624,
-        "team": "CHI",
-        "current_stat": 98,
-        "target_milestone": 100,
-        "needed": 2,
-        "image_url": "https://assets.nhle.com/mugs/nhl/20252026/CHI/8481624.png",
-        "stat_type": "goals",
-        "season_avg": 0.24,
-        "last_5_avg": 0.6,
-        "next_game": {
-            "opponent": "SJS",
-            "date": "Thu, Apr 16 @ 12:30 AM",
-            "is_home": true
-        }
-    },
-    {
-        "player_name": "Pavel Dorofeyev",
-        "player_id": 8481604,
-        "team": "VGK",
-        "current_stat": 91,
-        "target_milestone": 100,
-        "needed": 9,
-        "image_url": "https://assets.nhle.com/mugs/nhl/20252026/VGK/8481604.png",
-        "stat_type": "goals",
-        "season_avg": 0.46,
-        "last_5_avg": 0.4,
-        "next_game": {
-            "opponent": "SEA",
-            "date": "Thu, Apr 16 @ 02:00 AM",
-            "is_home": true
-        }
-    },
-    {
-        "player_name": "Nick Cousins",
-        "player_id": 8476393,
-        "team": "OTT",
-        "current_stat": 86,
-        "target_milestone": 100,
-        "needed": 14,
-        "image_url": "https://assets.nhle.com/mugs/nhl/20252026/OTT/8476393.png",
-        "stat_type": "goals",
-        "season_avg": 0.11,
-        "last_5_avg": 0.0,
-        "next_game": {
-            "opponent": "TOR",
-            "date": "Wed, Apr 15 @ 11:30 PM",
-            "is_home": true
-        }
-    },
-    {
-        "player_name": "Alex Tuch",
-        "player_id": 8477949,
-        "team": "BUF",
-        "current_stat": 199,
-        "target_milestone": 200,
-        "needed": 1,
-        "image_url": "https://assets.nhle.com/mugs/nhl/20252026/BUF/8477949.png",
-        "stat_type": "goals",
-        "season_avg": 0.41,
-        "last_5_avg": 0.6,
-        "next_game": {
-            "opponent": "DAL",
-            "date": "Wed, Apr 15 @ 11:00 PM",
-            "is_home": true
-        }
-    },
-    {
-        "player_name": "Bo Horvat",
-        "player_id": 8477500,
-        "team": "NYI",
-        "current_stat": 299,
-        "target_milestone": 300,
-        "needed": 1,
-        "image_url": "https://assets.nhle.com/mugs/nhl/20252026/NYI/8477500.png",
-        "stat_type": "goals",
-        "season_avg": 0.45,
-        "last_5_avg": 0.0,
-        "next_game": {
-            "opponent": "CAR",
-            "date": "Tue, Apr 14 @ 11:00 PM",
-            "is_home": true
-        }
-    },
-    {
-        "player_name": "Kevin Hayes",
-        "player_id": 8475763,
-        "team": "PIT",
-        "current_stat": 185,
-        "target_milestone": 200,
-        "needed": 15,
-        "image_url": "https://assets.nhle.com/mugs/nhl/20252026/PIT/8475763.png",
-        "stat_type": "goals",
-        "season_avg": 0.15,
-        "last_5_avg": 0.2,
-        "next_game": {
-            "opponent": "STL",
-            "date": "Wed, Apr 15 @ 01:30 AM",
-            "is_home": false
-        }
-    },
-    {
-        "player_name": "Nic Dowd",
-        "player_id": 8475343,
-        "team": "VGK",
-        "current_stat": 89,
-        "target_milestone": 100,
-        "needed": 11,
-        "image_url": "https://assets.nhle.com/mugs/nhl/20252026/VGK/8475343.png",
-        "stat_type": "goals",
-        "season_avg": 0.07,
-        "last_5_avg": 0.0,
-        "next_game": {
-            "opponent": "SEA",
-            "date": "Thu, Apr 16 @ 02:00 AM",
-            "is_home": true
-        }
-    },
-    {
-        "player_name": "Brandon Montour",
-        "player_id": 8477986,
-        "team": "SEA",
-        "current_stat": 95,
-        "target_milestone": 100,
-        "needed": 5,
-        "image_url": "https://assets.nhle.com/mugs/nhl/20252026/SEA/8477986.png",
-        "stat_type": "goals",
-        "season_avg": 0.18,
-        "last_5_avg": 0.2,
-        "next_game": {
-            "opponent": "VGK",
-            "date": "Thu, Apr 16 @ 02:00 AM",
-            "is_home": false
-        }
-    },
-    {
-        "player_name": "Trevor Zegras",
-        "player_id": 8481533,
-        "team": "PHI",
-        "current_stat": 93,
-        "target_milestone": 100,
-        "needed": 7,
-        "image_url": "https://assets.nhle.com/mugs/nhl/20252026/PHI/8481533.png",
-        "stat_type": "goals",
-        "season_avg": 0.32,
-        "last_5_avg": 0.6,
-        "next_game": {
-            "opponent": "MTL",
-            "date": "Tue, Apr 14 @ 11:00 PM",
-            "is_home": true
-        }
-    },
-    {
-        "player_name": "Matt Duchene",
-        "player_id": 8475168,
-        "team": "DAL",
-        "current_stat": 387,
-        "target_milestone": 400,
-        "needed": 13,
-        "image_url": "https://assets.nhle.com/mugs/nhl/20252026/DAL/8475168.png",
-        "stat_type": "goals",
-        "season_avg": 0.29,
-        "last_5_avg": 0.0,
-        "next_game": {
-            "opponent": "BUF",
-            "date": "Wed, Apr 15 @ 11:00 PM",
-            "is_home": false
-        }
-    },
-    {
-        "player_name": "Jonathan Toews",
-        "player_id": 8473604,
-        "team": "WPG",
-        "current_stat": 383,
-        "target_milestone": 400,
-        "needed": 17,
-        "image_url": "https://assets.nhle.com/mugs/nhl/20252026/WPG/8473604.png",
-        "stat_type": "goals",
-        "season_avg": 0.14,
-        "last_5_avg": 0.4,
-        "next_game": {
-            "opponent": "UTA",
-            "date": "Wed, Apr 15 @ 01:00 AM",
-            "is_home": false
-        }
-    },
-    {
-        "player_name": "William Nylander",
-        "player_id": 8477939,
-        "team": "TOR",
-        "current_stat": 291,
-        "target_milestone": 300,
-        "needed": 9,
-        "image_url": "https://assets.nhle.com/mugs/nhl/20252026/TOR/8477939.png",
-        "stat_type": "goals",
-        "season_avg": 0.45,
-        "last_5_avg": 0.6,
-        "next_game": {
-            "opponent": "OTT",
-            "date": "Wed, Apr 15 @ 11:30 PM",
-            "is_home": false
-        }
-    },
-    {
-        "player_name": "Jeff Petry",
-        "player_id": 8473507,
-        "team": "MIN",
-        "current_stat": 96,
-        "target_milestone": 100,
-        "needed": 4,
-        "image_url": "https://assets.nhle.com/mugs/nhl/20252026/MIN/8473507.png",
-        "stat_type": "goals",
-        "season_avg": 0.0,
-        "last_5_avg": 0.0,
-        "next_game": {
-            "opponent": "ANA",
-            "date": "Wed, Apr 15 @ 12:00 AM",
-            "is_home": true
-        }
-    },
-    {
-        "player_name": "Jake DeBrusk",
-        "player_id": 8478498,
-        "team": "VAN",
-        "current_stat": 187,
-        "target_milestone": 200,
-        "needed": 13,
-        "image_url": "https://assets.nhle.com/mugs/nhl/20252026/VAN/8478498.png",
-        "stat_type": "goals",
-        "season_avg": 0.27,
-        "last_5_avg": 0.6,
-        "next_game": {
-            "opponent": "LAK",
-            "date": "Wed, Apr 15 @ 02:00 AM",
-            "is_home": true
-        }
-    },
-    {
-        "player_name": "Brady Skjei",
-        "player_id": 8476869,
-        "team": "NSH",
-        "current_stat": 81,
-        "target_milestone": 100,
-        "needed": 19,
-        "image_url": "https://assets.nhle.com/mugs/nhl/20252026/NSH/8476869.png",
-        "stat_type": "goals",
-        "season_avg": 0.04,
-        "last_5_avg": 0.2,
-        "next_game": {
-            "opponent": "ANA",
-            "date": "Fri, Apr 17 @ 12:00 AM",
-            "is_home": true
-        }
-    },
-    {
-        "player_name": "Mike Matheson",
-        "player_id": 8476875,
-        "team": "MTL",
-        "current_stat": 81,
-        "target_milestone": 100,
-        "needed": 19,
-        "image_url": "https://assets.nhle.com/mugs/nhl/20252026/MTL/8476875.png",
-        "stat_type": "goals",
-        "season_avg": 0.09,
-        "last_5_avg": 0.0,
-        "next_game": {
-            "opponent": "PHI",
-            "date": "Tue, Apr 14 @ 11:00 PM",
-            "is_home": false
-        }
-    },
-    {
-        "player_name": "Filip Chytil",
-        "player_id": 8480078,
-        "team": "VAN",
-        "current_stat": 80,
-        "target_milestone": 100,
-        "needed": 20,
-        "image_url": "https://assets.nhle.com/mugs/nhl/20252026/VAN/8480078.png",
-        "stat_type": "goals",
-        "season_avg": 0.25,
-        "last_5_avg": 0.0,
-        "next_game": {
-            "opponent": "LAK",
-            "date": "Wed, Apr 15 @ 02:00 AM",
-            "is_home": true
-        }
-    },
-    {
         "player_name": "Morgan Rielly",
         "player_id": 8476853,
         "team": "TOR",
@@ -476,291 +17,19 @@
         }
     },
     {
-        "player_name": "Eeli Tolvanen",
-        "player_id": 8480009,
+        "player_name": "Vince Dunn",
+        "player_id": 8478407,
         "team": "SEA",
-        "current_stat": 92,
-        "target_milestone": 100,
-        "needed": 8,
-        "image_url": "https://assets.nhle.com/mugs/nhl/20252026/SEA/8480009.png",
-        "stat_type": "goals",
-        "season_avg": 0.16,
-        "last_5_avg": 0.0,
-        "next_game": {
-            "opponent": "VGK",
-            "date": "Thu, Apr 16 @ 02:00 AM",
-            "is_home": false
-        }
-    },
-    {
-        "player_name": "Noel Acciari",
-        "player_id": 8478569,
-        "team": "PIT",
-        "current_stat": 81,
-        "target_milestone": 100,
-        "needed": 19,
-        "image_url": "https://assets.nhle.com/mugs/nhl/20252026/PIT/8478569.png",
-        "stat_type": "goals",
-        "season_avg": 0.2,
-        "last_5_avg": 0.4,
-        "next_game": {
-            "opponent": "STL",
-            "date": "Wed, Apr 15 @ 01:30 AM",
-            "is_home": false
-        }
-    },
-    {
-        "player_name": "Miles Wood",
-        "player_id": 8477425,
-        "team": "CBJ",
-        "current_stat": 99,
-        "target_milestone": 100,
-        "needed": 1,
-        "image_url": "https://assets.nhle.com/mugs/nhl/20252026/CBJ/8477425.png",
-        "stat_type": "goals",
-        "season_avg": 0.15,
-        "last_5_avg": 0.0,
-        "next_game": {
-            "opponent": "WSH",
-            "date": "Tue, Apr 14 @ 11:00 PM",
-            "is_home": true
-        }
-    },
-    {
-        "player_name": "Lars Eller",
-        "player_id": 8474189,
-        "team": "OTT",
-        "current_stat": 193,
-        "target_milestone": 200,
-        "needed": 7,
-        "image_url": "https://assets.nhle.com/mugs/nhl/20252026/OTT/8474189.png",
-        "stat_type": "goals",
-        "season_avg": 0.07,
-        "last_5_avg": 0.0,
-        "next_game": {
-            "opponent": "TOR",
-            "date": "Wed, Apr 15 @ 11:30 PM",
-            "is_home": true
-        }
-    },
-    {
-        "player_name": "Mikael Granlund",
-        "player_id": 8475798,
-        "team": "ANA",
-        "current_stat": 198,
-        "target_milestone": 200,
-        "needed": 2,
-        "image_url": "https://assets.nhle.com/mugs/nhl/20252026/ANA/8475798.png",
-        "stat_type": "goals",
-        "season_avg": 0.34,
-        "last_5_avg": 0.0,
-        "next_game": {
-            "opponent": "MIN",
-            "date": "Wed, Apr 15 @ 12:00 AM",
-            "is_home": false
-        }
-    },
-    {
-        "player_name": "Ivan Provorov",
-        "player_id": 8478500,
-        "team": "CBJ",
         "current_stat": 86,
         "target_milestone": 100,
         "needed": 14,
-        "image_url": "https://assets.nhle.com/mugs/nhl/20252026/CBJ/8478500.png",
-        "stat_type": "goals",
-        "season_avg": 0.11,
-        "last_5_avg": 0.2,
-        "next_game": {
-            "opponent": "WSH",
-            "date": "Tue, Apr 14 @ 11:00 PM",
-            "is_home": true
-        }
-    },
-    {
-        "player_name": "Kasperi Kapanen",
-        "player_id": 8477953,
-        "team": "EDM",
-        "current_stat": 98,
-        "target_milestone": 100,
-        "needed": 2,
-        "image_url": "https://assets.nhle.com/mugs/nhl/20252026/EDM/8477953.png",
-        "stat_type": "goals",
-        "season_avg": 0.2,
-        "last_5_avg": 0.0,
-        "next_game": {
-            "opponent": "VAN",
-            "date": "Fri, Apr 17 @ 01:00 AM",
-            "is_home": true
-        }
-    },
-    {
-        "player_name": "Shea Theodore",
-        "player_id": 8477447,
-        "team": "VGK",
-        "current_stat": 87,
-        "target_milestone": 100,
-        "needed": 13,
-        "image_url": "https://assets.nhle.com/mugs/nhl/20252026/VGK/8477447.png",
-        "stat_type": "goals",
-        "season_avg": 0.13,
-        "last_5_avg": 0.0,
-        "next_game": {
-            "opponent": "SEA",
-            "date": "Thu, Apr 16 @ 02:00 AM",
-            "is_home": true
-        }
-    },
-    {
-        "player_name": "Frank Vatrano",
-        "player_id": 8478366,
-        "team": "ANA",
-        "current_stat": 186,
-        "target_milestone": 200,
-        "needed": 14,
-        "image_url": "https://assets.nhle.com/mugs/nhl/20252026/ANA/8478366.png",
-        "stat_type": "goals",
-        "season_avg": 0.1,
-        "last_5_avg": 0.2,
-        "next_game": {
-            "opponent": "MIN",
-            "date": "Wed, Apr 15 @ 12:00 AM",
-            "is_home": false
-        }
-    },
-    {
-        "player_name": "John Klingberg",
-        "player_id": 8475906,
-        "team": "SJS",
-        "current_stat": 92,
-        "target_milestone": 100,
-        "needed": 8,
-        "image_url": "https://assets.nhle.com/mugs/nhl/20252026/SJS/8475906.png",
-        "stat_type": "goals",
-        "season_avg": 0.18,
-        "last_5_avg": 0.0,
-        "next_game": {
-            "opponent": "CHI",
-            "date": "Thu, Apr 16 @ 12:30 AM",
-            "is_home": false
-        }
-    },
-    {
-        "player_name": "Ondrej Palat",
-        "player_id": 8476292,
-        "team": "NYI",
-        "current_stat": 182,
-        "target_milestone": 200,
-        "needed": 18,
-        "image_url": "https://assets.nhle.com/mugs/nhl/20252026/NYI/8476292.png",
-        "stat_type": "goals",
-        "season_avg": 0.06,
-        "last_5_avg": 0.0,
-        "next_game": {
-            "opponent": "CAR",
-            "date": "Tue, Apr 14 @ 11:00 PM",
-            "is_home": true
-        }
-    },
-    {
-        "player_name": "Jacob Trouba",
-        "player_id": 8476885,
-        "team": "ANA",
-        "current_stat": 84,
-        "target_milestone": 100,
-        "needed": 16,
-        "image_url": "https://assets.nhle.com/mugs/nhl/20252026/ANA/8476885.png",
-        "stat_type": "goals",
-        "season_avg": 0.13,
-        "last_5_avg": 0.0,
-        "next_game": {
-            "opponent": "MIN",
-            "date": "Wed, Apr 15 @ 12:00 AM",
-            "is_home": false
-        }
-    },
-    {
-        "player_name": "Brayden Schenn",
-        "player_id": 8475170,
-        "team": "NYI",
-        "current_stat": 296,
-        "target_milestone": 300,
-        "needed": 4,
-        "image_url": "https://assets.nhle.com/mugs/nhl/20252026/NYI/8475170.png",
-        "stat_type": "goals",
-        "season_avg": 0.23,
-        "last_5_avg": 0.2,
-        "next_game": {
-            "opponent": "CAR",
-            "date": "Tue, Apr 14 @ 11:00 PM",
-            "is_home": true
-        }
-    },
-    {
-        "player_name": "Radek Faksa",
-        "player_id": 8476889,
-        "team": "DAL",
-        "current_stat": 96,
-        "target_milestone": 100,
-        "needed": 4,
-        "image_url": "https://assets.nhle.com/mugs/nhl/20252026/DAL/8476889.png",
-        "stat_type": "goals",
-        "season_avg": 0.04,
-        "last_5_avg": 0.0,
-        "next_game": {
-            "opponent": "BUF",
-            "date": "Wed, Apr 15 @ 11:00 PM",
-            "is_home": false
-        }
-    },
-    {
-        "player_name": "Mattias Janmark",
-        "player_id": 8477406,
-        "team": "EDM",
-        "current_stat": 83,
-        "target_milestone": 100,
-        "needed": 17,
-        "image_url": "https://assets.nhle.com/mugs/nhl/20252026/EDM/8477406.png",
-        "stat_type": "goals",
-        "season_avg": 0.02,
-        "last_5_avg": 0.0,
-        "next_game": {
-            "opponent": "VAN",
-            "date": "Fri, Apr 17 @ 01:00 AM",
-            "is_home": true
-        }
-    },
-    {
-        "player_name": "Oliver Bjorkstrand",
-        "player_id": 8477416,
-        "team": "TBL",
-        "current_stat": 183,
-        "target_milestone": 200,
-        "needed": 17,
-        "image_url": "https://assets.nhle.com/mugs/nhl/20252026/TBL/8477416.png",
+        "image_url": "https://assets.nhle.com/mugs/nhl/20252026/SEA/8478407.png",
         "stat_type": "goals",
         "season_avg": 0.14,
         "last_5_avg": 0.0,
         "next_game": {
-            "opponent": "NYR",
-            "date": "Wed, Apr 15 @ 11:00 PM",
-            "is_home": true
-        }
-    },
-    {
-        "player_name": "Nico Hischier",
-        "player_id": 8480002,
-        "team": "NJD",
-        "current_stat": 199,
-        "target_milestone": 200,
-        "needed": 1,
-        "image_url": "https://assets.nhle.com/mugs/nhl/20252026/NJD/8480002.png",
-        "stat_type": "goals",
-        "season_avg": 0.35,
-        "last_5_avg": 0.4,
-        "next_game": {
-            "opponent": "BOS",
-            "date": "Tue, Apr 14 @ 11:00 PM",
+            "opponent": "VGK",
+            "date": "Thu, Apr 16 @ 02:00 AM",
             "is_home": false
         }
     },
@@ -782,71 +51,71 @@
         }
     },
     {
-        "player_name": "Casey Mittelstadt",
-        "player_id": 8479999,
-        "team": "BOS",
-        "current_stat": 96,
+        "player_name": "Colton Parayko",
+        "player_id": 8476892,
+        "team": "STL",
+        "current_stat": 81,
         "target_milestone": 100,
-        "needed": 4,
-        "image_url": "https://assets.nhle.com/mugs/nhl/20252026/BOS/8479999.png",
+        "needed": 19,
+        "image_url": "https://assets.nhle.com/mugs/nhl/20252026/STL/8476892.png",
         "stat_type": "goals",
-        "season_avg": 0.21,
-        "last_5_avg": 0.2,
-        "next_game": {
-            "opponent": "NJD",
-            "date": "Tue, Apr 14 @ 11:00 PM",
-            "is_home": true
-        }
-    },
-    {
-        "player_name": "Luke Glendening",
-        "player_id": 8476822,
-        "team": "PHI",
-        "current_stat": 85,
-        "target_milestone": 100,
-        "needed": 15,
-        "image_url": "https://assets.nhle.com/mugs/nhl/20252026/PHI/8476822.png",
-        "stat_type": "goals",
-        "season_avg": 0.03,
-        "last_5_avg": 0.2,
-        "next_game": {
-            "opponent": "MTL",
-            "date": "Tue, Apr 14 @ 11:00 PM",
-            "is_home": true
-        }
-    },
-    {
-        "player_name": "Josh Morrissey",
-        "player_id": 8477504,
-        "team": "WPG",
-        "current_stat": 94,
-        "target_milestone": 100,
-        "needed": 6,
-        "image_url": "https://assets.nhle.com/mugs/nhl/20252026/WPG/8477504.png",
-        "stat_type": "goals",
-        "season_avg": 0.19,
-        "last_5_avg": 0.2,
+        "season_avg": 0.05,
+        "last_5_avg": 0.4,
         "next_game": {
             "opponent": "UTA",
-            "date": "Wed, Apr 15 @ 01:00 AM",
+            "date": "Thu, Apr 16 @ 11:30 PM",
             "is_home": false
         }
     },
     {
-        "player_name": "Stefan Noesen",
-        "player_id": 8476474,
-        "team": "NJD",
-        "current_stat": 83,
+        "player_name": "Brady Skjei",
+        "player_id": 8476869,
+        "team": "NSH",
+        "current_stat": 81,
         "target_milestone": 100,
-        "needed": 17,
-        "image_url": "https://assets.nhle.com/mugs/nhl/20252026/NJD/8476474.png",
+        "needed": 19,
+        "image_url": "https://assets.nhle.com/mugs/nhl/20252026/NSH/8476869.png",
         "stat_type": "goals",
-        "season_avg": 0.08,
+        "season_avg": 0.04,
+        "last_5_avg": 0.2,
+        "next_game": {
+            "opponent": "ANA",
+            "date": "Fri, Apr 17 @ 12:00 AM",
+            "is_home": true
+        }
+    },
+    {
+        "player_name": "Filip Chytil",
+        "player_id": 8480078,
+        "team": "VAN",
+        "current_stat": 80,
+        "target_milestone": 100,
+        "needed": 20,
+        "image_url": "https://assets.nhle.com/mugs/nhl/20252026/VAN/8480078.png",
+        "stat_type": "goals",
+        "season_avg": 0.25,
         "last_5_avg": 0.0,
         "next_game": {
-            "opponent": "BOS",
-            "date": "Tue, Apr 14 @ 11:00 PM",
+            "opponent": "EDM",
+            "date": "Fri, Apr 17 @ 01:00 AM",
             "is_home": false
+        }
+    },
+    {
+        "player_name": "Lars Eller",
+        "player_id": 8474189,
+        "team": "OTT",
+        "current_stat": 193,
+        "target_milestone": 200,
+        "needed": 7,
+        "image_url": "https://assets.nhle.com/mugs/nhl/20252026/OTT/8474189.png",
+        "stat_type": "goals",
+        "season_avg": 0.07,
+        "last_5_avg": 0.0,
+        "next_game": {
+            "opponent": "TOR",
+            "date": "Wed, Apr 15 @ 11:30 PM",
+            "is_home": true
         }
     },
     {
@@ -860,91 +129,36 @@
         "stat_type": "goals",
         "season_avg": 0.39,
         "last_5_avg": 0.8,
-        "next_game": {
-            "opponent": "NYI",
-            "date": "Tue, Apr 14 @ 11:00 PM",
-            "is_home": false
-        }
+        "next_game": null
     },
     {
-        "player_name": "Colton Parayko",
-        "player_id": 8476892,
-        "team": "STL",
-        "current_stat": 81,
+        "player_name": "Josh Morrissey",
+        "player_id": 8477504,
+        "team": "WPG",
+        "current_stat": 94,
         "target_milestone": 100,
-        "needed": 19,
-        "image_url": "https://assets.nhle.com/mugs/nhl/20252026/STL/8476892.png",
+        "needed": 6,
+        "image_url": "https://assets.nhle.com/mugs/nhl/20252026/WPG/8477504.png",
         "stat_type": "goals",
-        "season_avg": 0.05,
-        "last_5_avg": 0.4,
-        "next_game": {
-            "opponent": "PIT",
-            "date": "Wed, Apr 15 @ 01:30 AM",
-            "is_home": true
-        }
-    },
-    {
-        "player_name": "Dylan Guenther",
-        "player_id": 8482699,
-        "team": "UTA",
-        "current_stat": 91,
-        "target_milestone": 100,
-        "needed": 9,
-        "image_url": "https://assets.nhle.com/mugs/nhl/20252026/UTA/8482699.png",
-        "stat_type": "goals",
-        "season_avg": 0.51,
-        "last_5_avg": 0.6,
-        "next_game": {
-            "opponent": "WPG",
-            "date": "Wed, Apr 15 @ 01:00 AM",
-            "is_home": true
-        }
-    },
-    {
-        "player_name": "Teuvo Teravainen",
-        "player_id": 8476882,
-        "team": "CHI",
-        "current_stat": 184,
-        "target_milestone": 200,
-        "needed": 16,
-        "image_url": "https://assets.nhle.com/mugs/nhl/20252026/CHI/8476882.png",
-        "stat_type": "goals",
-        "season_avg": 0.19,
+        "season_avg": 0.18,
         "last_5_avg": 0.2,
         "next_game": {
             "opponent": "SJS",
-            "date": "Thu, Apr 16 @ 12:30 AM",
+            "date": "Fri, Apr 17 @ 12:00 AM",
             "is_home": true
         }
     },
     {
-        "player_name": "Aleksander Barkov",
-        "player_id": 8477493,
-        "team": "FLA",
-        "current_stat": 286,
-        "target_milestone": 300,
-        "needed": 14,
-        "image_url": "https://assets.nhle.com/mugs/nhl/20252026/FLA/8477493.png",
-        "stat_type": "goals",
-        "season_avg": 0.3,
-        "last_5_avg": 0.0,
-        "next_game": {
-            "opponent": "DET",
-            "date": "Wed, Apr 15 @ 11:00 PM",
-            "is_home": true
-        }
-    },
-    {
-        "player_name": "Darnell Nurse",
-        "player_id": 8477498,
+        "player_name": "Ryan Nugent-Hopkins",
+        "player_id": 8476454,
         "team": "EDM",
-        "current_stat": 88,
-        "target_milestone": 100,
-        "needed": 12,
-        "image_url": "https://assets.nhle.com/mugs/nhl/20252026/EDM/8477498.png",
+        "current_stat": 290,
+        "target_milestone": 300,
+        "needed": 10,
+        "image_url": "https://assets.nhle.com/mugs/nhl/20252026/EDM/8476454.png",
         "stat_type": "goals",
-        "season_avg": 0.09,
-        "last_5_avg": 0.0,
+        "season_avg": 0.27,
+        "last_5_avg": 0.2,
         "next_game": {
             "opponent": "VAN",
             "date": "Fri, Apr 17 @ 01:00 AM",
@@ -963,59 +177,25 @@
         "season_avg": 0.0,
         "last_5_avg": 0.0,
         "next_game": {
-            "opponent": "WPG",
-            "date": "Wed, Apr 15 @ 01:00 AM",
+            "opponent": "STL",
+            "date": "Thu, Apr 16 @ 11:30 PM",
             "is_home": true
         }
     },
     {
-        "player_name": "Ross Colton",
-        "player_id": 8479525,
-        "team": "COL",
-        "current_stat": 89,
+        "player_name": "Shea Theodore",
+        "player_id": 8477447,
+        "team": "VGK",
+        "current_stat": 87,
         "target_milestone": 100,
-        "needed": 11,
-        "image_url": "https://assets.nhle.com/mugs/nhl/20252026/COL/8479525.png",
+        "needed": 13,
+        "image_url": "https://assets.nhle.com/mugs/nhl/20252026/VGK/8477447.png",
         "stat_type": "goals",
         "season_avg": 0.13,
         "last_5_avg": 0.0,
         "next_game": {
-            "opponent": "CGY",
-            "date": "Wed, Apr 15 @ 01:00 AM",
-            "is_home": false
-        }
-    },
-    {
-        "player_name": "Michael Amadio",
-        "player_id": 8478020,
-        "team": "OTT",
-        "current_stat": 83,
-        "target_milestone": 100,
-        "needed": 17,
-        "image_url": "https://assets.nhle.com/mugs/nhl/20252026/OTT/8478020.png",
-        "stat_type": "goals",
-        "season_avg": 0.19,
-        "last_5_avg": 0.4,
-        "next_game": {
-            "opponent": "TOR",
-            "date": "Wed, Apr 15 @ 11:30 PM",
-            "is_home": true
-        }
-    },
-    {
-        "player_name": "JJ Peterka",
-        "player_id": 8482175,
-        "team": "UTA",
-        "current_stat": 91,
-        "target_milestone": 100,
-        "needed": 9,
-        "image_url": "https://assets.nhle.com/mugs/nhl/20252026/UTA/8482175.png",
-        "stat_type": "goals",
-        "season_avg": 0.3,
-        "last_5_avg": 0.2,
-        "next_game": {
-            "opponent": "WPG",
-            "date": "Wed, Apr 15 @ 01:00 AM",
+            "opponent": "SEA",
+            "date": "Thu, Apr 16 @ 02:00 AM",
             "is_home": true
         }
     },
@@ -1037,6 +217,326 @@
         }
     },
     {
+        "player_name": "Oliver Bjorkstrand",
+        "player_id": 8477416,
+        "team": "TBL",
+        "current_stat": 183,
+        "target_milestone": 200,
+        "needed": 17,
+        "image_url": "https://assets.nhle.com/mugs/nhl/20252026/TBL/8477416.png",
+        "stat_type": "goals",
+        "season_avg": 0.14,
+        "last_5_avg": 0.0,
+        "next_game": {
+            "opponent": "NYR",
+            "date": "Wed, Apr 15 @ 11:00 PM",
+            "is_home": true
+        }
+    },
+    {
+        "player_name": "Michael Amadio",
+        "player_id": 8478020,
+        "team": "OTT",
+        "current_stat": 83,
+        "target_milestone": 100,
+        "needed": 17,
+        "image_url": "https://assets.nhle.com/mugs/nhl/20252026/OTT/8478020.png",
+        "stat_type": "goals",
+        "season_avg": 0.19,
+        "last_5_avg": 0.4,
+        "next_game": {
+            "opponent": "TOR",
+            "date": "Wed, Apr 15 @ 11:30 PM",
+            "is_home": true
+        }
+    },
+    {
+        "player_name": "Matt Duchene",
+        "player_id": 8475168,
+        "team": "DAL",
+        "current_stat": 387,
+        "target_milestone": 400,
+        "needed": 13,
+        "image_url": "https://assets.nhle.com/mugs/nhl/20252026/DAL/8475168.png",
+        "stat_type": "goals",
+        "season_avg": 0.29,
+        "last_5_avg": 0.0,
+        "next_game": {
+            "opponent": "BUF",
+            "date": "Wed, Apr 15 @ 11:00 PM",
+            "is_home": false
+        }
+    },
+    {
+        "player_name": "Roope Hintz",
+        "player_id": 8478449,
+        "team": "DAL",
+        "current_stat": 190,
+        "target_milestone": 200,
+        "needed": 10,
+        "image_url": "https://assets.nhle.com/mugs/nhl/20252026/DAL/8478449.png",
+        "stat_type": "goals",
+        "season_avg": 0.28,
+        "last_5_avg": 0.0,
+        "next_game": {
+            "opponent": "BUF",
+            "date": "Wed, Apr 15 @ 11:00 PM",
+            "is_home": false
+        }
+    },
+    {
+        "player_name": "Stefan Noesen",
+        "player_id": 8476474,
+        "team": "NJD",
+        "current_stat": 83,
+        "target_milestone": 100,
+        "needed": 17,
+        "image_url": "https://assets.nhle.com/mugs/nhl/20252026/NJD/8476474.png",
+        "stat_type": "goals",
+        "season_avg": 0.08,
+        "last_5_avg": 0.0,
+        "next_game": null
+    },
+    {
+        "player_name": "Mason Marchment",
+        "player_id": 8478975,
+        "team": "CBJ",
+        "current_stat": 95,
+        "target_milestone": 100,
+        "needed": 5,
+        "image_url": "https://assets.nhle.com/mugs/nhl/20252026/CBJ/8478975.png",
+        "stat_type": "goals",
+        "season_avg": 0.28,
+        "last_5_avg": 0.2,
+        "next_game": null
+    },
+    {
+        "player_name": "Radek Faksa",
+        "player_id": 8476889,
+        "team": "DAL",
+        "current_stat": 96,
+        "target_milestone": 100,
+        "needed": 4,
+        "image_url": "https://assets.nhle.com/mugs/nhl/20252026/DAL/8476889.png",
+        "stat_type": "goals",
+        "season_avg": 0.04,
+        "last_5_avg": 0.0,
+        "next_game": {
+            "opponent": "BUF",
+            "date": "Wed, Apr 15 @ 11:00 PM",
+            "is_home": false
+        }
+    },
+    {
+        "player_name": "Aleksander Barkov",
+        "player_id": 8477493,
+        "team": "FLA",
+        "current_stat": 286,
+        "target_milestone": 300,
+        "needed": 14,
+        "image_url": "https://assets.nhle.com/mugs/nhl/20252026/FLA/8477493.png",
+        "stat_type": "goals",
+        "season_avg": 0.3,
+        "last_5_avg": 0.0,
+        "next_game": {
+            "opponent": "DET",
+            "date": "Wed, Apr 15 @ 11:00 PM",
+            "is_home": true
+        }
+    },
+    {
+        "player_name": "Eeli Tolvanen",
+        "player_id": 8480009,
+        "team": "SEA",
+        "current_stat": 92,
+        "target_milestone": 100,
+        "needed": 8,
+        "image_url": "https://assets.nhle.com/mugs/nhl/20252026/SEA/8480009.png",
+        "stat_type": "goals",
+        "season_avg": 0.16,
+        "last_5_avg": 0.0,
+        "next_game": {
+            "opponent": "VGK",
+            "date": "Thu, Apr 16 @ 02:00 AM",
+            "is_home": false
+        }
+    },
+    {
+        "player_name": "Trevor Zegras",
+        "player_id": 8481533,
+        "team": "PHI",
+        "current_stat": 93,
+        "target_milestone": 100,
+        "needed": 7,
+        "image_url": "https://assets.nhle.com/mugs/nhl/20252026/PHI/8481533.png",
+        "stat_type": "goals",
+        "season_avg": 0.32,
+        "last_5_avg": 0.6,
+        "next_game": null
+    },
+    {
+        "player_name": "Jacob Trouba",
+        "player_id": 8476885,
+        "team": "ANA",
+        "current_stat": 84,
+        "target_milestone": 100,
+        "needed": 16,
+        "image_url": "https://assets.nhle.com/mugs/nhl/20252026/ANA/8476885.png",
+        "stat_type": "goals",
+        "season_avg": 0.12,
+        "last_5_avg": 0.0,
+        "next_game": {
+            "opponent": "NSH",
+            "date": "Fri, Apr 17 @ 12:00 AM",
+            "is_home": false
+        }
+    },
+    {
+        "player_name": "Matty Beniers",
+        "player_id": 8482665,
+        "team": "SEA",
+        "current_stat": 82,
+        "target_milestone": 100,
+        "needed": 18,
+        "image_url": "https://assets.nhle.com/mugs/nhl/20252026/SEA/8482665.png",
+        "stat_type": "goals",
+        "season_avg": 0.25,
+        "last_5_avg": 0.2,
+        "next_game": {
+            "opponent": "VGK",
+            "date": "Thu, Apr 16 @ 02:00 AM",
+            "is_home": false
+        }
+    },
+    {
+        "player_name": "Pavel Dorofeyev",
+        "player_id": 8481604,
+        "team": "VGK",
+        "current_stat": 92,
+        "target_milestone": 100,
+        "needed": 8,
+        "image_url": "https://assets.nhle.com/mugs/nhl/20252026/VGK/8481604.png",
+        "stat_type": "goals",
+        "season_avg": 0.46,
+        "last_5_avg": 0.4,
+        "next_game": {
+            "opponent": "SEA",
+            "date": "Thu, Apr 16 @ 02:00 AM",
+            "is_home": true
+        }
+    },
+    {
+        "player_name": "Nic Dowd",
+        "player_id": 8475343,
+        "team": "VGK",
+        "current_stat": 89,
+        "target_milestone": 100,
+        "needed": 11,
+        "image_url": "https://assets.nhle.com/mugs/nhl/20252026/VGK/8475343.png",
+        "stat_type": "goals",
+        "season_avg": 0.07,
+        "last_5_avg": 0.0,
+        "next_game": {
+            "opponent": "SEA",
+            "date": "Thu, Apr 16 @ 02:00 AM",
+            "is_home": true
+        }
+    },
+    {
+        "player_name": "Damon Severson",
+        "player_id": 8476923,
+        "team": "CBJ",
+        "current_stat": 81,
+        "target_milestone": 100,
+        "needed": 19,
+        "image_url": "https://assets.nhle.com/mugs/nhl/20252026/CBJ/8476923.png",
+        "stat_type": "goals",
+        "season_avg": 0.11,
+        "last_5_avg": 0.6,
+        "next_game": null
+    },
+    {
+        "player_name": "Alex Tuch",
+        "player_id": 8477949,
+        "team": "BUF",
+        "current_stat": 199,
+        "target_milestone": 200,
+        "needed": 1,
+        "image_url": "https://assets.nhle.com/mugs/nhl/20252026/BUF/8477949.png",
+        "stat_type": "goals",
+        "season_avg": 0.41,
+        "last_5_avg": 0.6,
+        "next_game": {
+            "opponent": "DAL",
+            "date": "Wed, Apr 15 @ 11:00 PM",
+            "is_home": true
+        }
+    },
+    {
+        "player_name": "Ondrej Palat",
+        "player_id": 8476292,
+        "team": "NYI",
+        "current_stat": 182,
+        "target_milestone": 200,
+        "needed": 18,
+        "image_url": "https://assets.nhle.com/mugs/nhl/20252026/NYI/8476292.png",
+        "stat_type": "goals",
+        "season_avg": 0.06,
+        "last_5_avg": 0.0,
+        "next_game": null
+    },
+    {
+        "player_name": "Teuvo Teravainen",
+        "player_id": 8476882,
+        "team": "CHI",
+        "current_stat": 184,
+        "target_milestone": 200,
+        "needed": 16,
+        "image_url": "https://assets.nhle.com/mugs/nhl/20252026/CHI/8476882.png",
+        "stat_type": "goals",
+        "season_avg": 0.19,
+        "last_5_avg": 0.2,
+        "next_game": {
+            "opponent": "SJS",
+            "date": "Thu, Apr 16 @ 12:30 AM",
+            "is_home": true
+        }
+    },
+    {
+        "player_name": "Brandon Montour",
+        "player_id": 8477986,
+        "team": "SEA",
+        "current_stat": 95,
+        "target_milestone": 100,
+        "needed": 5,
+        "image_url": "https://assets.nhle.com/mugs/nhl/20252026/SEA/8477986.png",
+        "stat_type": "goals",
+        "season_avg": 0.18,
+        "last_5_avg": 0.2,
+        "next_game": {
+            "opponent": "VGK",
+            "date": "Thu, Apr 16 @ 02:00 AM",
+            "is_home": false
+        }
+    },
+    {
+        "player_name": "Andrei Kuzmenko",
+        "player_id": 8483808,
+        "team": "LAK",
+        "current_stat": 85,
+        "target_milestone": 100,
+        "needed": 15,
+        "image_url": "https://assets.nhle.com/mugs/nhl/20252026/LAK/8483808.png",
+        "stat_type": "goals",
+        "season_avg": 0.25,
+        "last_5_avg": 0.4,
+        "next_game": {
+            "opponent": "CGY",
+            "date": "Fri, Apr 17 @ 01:00 AM",
+            "is_home": false
+        }
+    },
+    {
         "player_name": "Alex DeBrincat",
         "player_id": 8479337,
         "team": "DET",
@@ -1054,6 +554,374 @@
         }
     },
     {
+        "player_name": "Casey Mittelstadt",
+        "player_id": 8479999,
+        "team": "BOS",
+        "current_stat": 96,
+        "target_milestone": 100,
+        "needed": 4,
+        "image_url": "https://assets.nhle.com/mugs/nhl/20252026/BOS/8479999.png",
+        "stat_type": "goals",
+        "season_avg": 0.21,
+        "last_5_avg": 0.2,
+        "next_game": null
+    },
+    {
+        "player_name": "Kasperi Kapanen",
+        "player_id": 8477953,
+        "team": "EDM",
+        "current_stat": 98,
+        "target_milestone": 100,
+        "needed": 2,
+        "image_url": "https://assets.nhle.com/mugs/nhl/20252026/EDM/8477953.png",
+        "stat_type": "goals",
+        "season_avg": 0.2,
+        "last_5_avg": 0.0,
+        "next_game": {
+            "opponent": "VAN",
+            "date": "Fri, Apr 17 @ 01:00 AM",
+            "is_home": true
+        }
+    },
+    {
+        "player_name": "Dylan Guenther",
+        "player_id": 8482699,
+        "team": "UTA",
+        "current_stat": 91,
+        "target_milestone": 100,
+        "needed": 9,
+        "image_url": "https://assets.nhle.com/mugs/nhl/20252026/UTA/8482699.png",
+        "stat_type": "goals",
+        "season_avg": 0.51,
+        "last_5_avg": 0.4,
+        "next_game": {
+            "opponent": "STL",
+            "date": "Thu, Apr 16 @ 11:30 PM",
+            "is_home": true
+        }
+    },
+    {
+        "player_name": "Ilya Mikheyev",
+        "player_id": 8481624,
+        "team": "CHI",
+        "current_stat": 98,
+        "target_milestone": 100,
+        "needed": 2,
+        "image_url": "https://assets.nhle.com/mugs/nhl/20252026/CHI/8481624.png",
+        "stat_type": "goals",
+        "season_avg": 0.24,
+        "last_5_avg": 0.6,
+        "next_game": {
+            "opponent": "SJS",
+            "date": "Thu, Apr 16 @ 12:30 AM",
+            "is_home": true
+        }
+    },
+    {
+        "player_name": "Ross Colton",
+        "player_id": 8479525,
+        "team": "COL",
+        "current_stat": 89,
+        "target_milestone": 100,
+        "needed": 11,
+        "image_url": "https://assets.nhle.com/mugs/nhl/20252026/COL/8479525.png",
+        "stat_type": "goals",
+        "season_avg": 0.12,
+        "last_5_avg": 0.0,
+        "next_game": {
+            "opponent": "SEA",
+            "date": "Fri, Apr 17 @ 02:00 AM",
+            "is_home": true
+        }
+    },
+    {
+        "player_name": "Luke Glendening",
+        "player_id": 8476822,
+        "team": "PHI",
+        "current_stat": 85,
+        "target_milestone": 100,
+        "needed": 15,
+        "image_url": "https://assets.nhle.com/mugs/nhl/20252026/PHI/8476822.png",
+        "stat_type": "goals",
+        "season_avg": 0.03,
+        "last_5_avg": 0.2,
+        "next_game": null
+    },
+    {
+        "player_name": "Kevin Hayes",
+        "player_id": 8475763,
+        "team": "PIT",
+        "current_stat": 185,
+        "target_milestone": 200,
+        "needed": 15,
+        "image_url": "https://assets.nhle.com/mugs/nhl/20252026/PIT/8475763.png",
+        "stat_type": "goals",
+        "season_avg": 0.14,
+        "last_5_avg": 0.2,
+        "next_game": null
+    },
+    {
+        "player_name": "Ivan Provorov",
+        "player_id": 8478500,
+        "team": "CBJ",
+        "current_stat": 86,
+        "target_milestone": 100,
+        "needed": 14,
+        "image_url": "https://assets.nhle.com/mugs/nhl/20252026/CBJ/8478500.png",
+        "stat_type": "goals",
+        "season_avg": 0.11,
+        "last_5_avg": 0.0,
+        "next_game": null
+    },
+    {
+        "player_name": "Miles Wood",
+        "player_id": 8477425,
+        "team": "CBJ",
+        "current_stat": 99,
+        "target_milestone": 100,
+        "needed": 1,
+        "image_url": "https://assets.nhle.com/mugs/nhl/20252026/CBJ/8477425.png",
+        "stat_type": "goals",
+        "season_avg": 0.15,
+        "last_5_avg": 0.0,
+        "next_game": null
+    },
+    {
+        "player_name": "Jonathan Toews",
+        "player_id": 8473604,
+        "team": "WPG",
+        "current_stat": 383,
+        "target_milestone": 400,
+        "needed": 17,
+        "image_url": "https://assets.nhle.com/mugs/nhl/20252026/WPG/8473604.png",
+        "stat_type": "goals",
+        "season_avg": 0.14,
+        "last_5_avg": 0.4,
+        "next_game": {
+            "opponent": "SJS",
+            "date": "Fri, Apr 17 @ 12:00 AM",
+            "is_home": true
+        }
+    },
+    {
+        "player_name": "Nico Hischier",
+        "player_id": 8480002,
+        "team": "NJD",
+        "current_stat": 199,
+        "target_milestone": 200,
+        "needed": 1,
+        "image_url": "https://assets.nhle.com/mugs/nhl/20252026/NJD/8480002.png",
+        "stat_type": "goals",
+        "season_avg": 0.34,
+        "last_5_avg": 0.4,
+        "next_game": null
+    },
+    {
+        "player_name": "Frank Vatrano",
+        "player_id": 8478366,
+        "team": "ANA",
+        "current_stat": 186,
+        "target_milestone": 200,
+        "needed": 14,
+        "image_url": "https://assets.nhle.com/mugs/nhl/20252026/ANA/8478366.png",
+        "stat_type": "goals",
+        "season_avg": 0.1,
+        "last_5_avg": 0.2,
+        "next_game": {
+            "opponent": "NSH",
+            "date": "Fri, Apr 17 @ 12:00 AM",
+            "is_home": false
+        }
+    },
+    {
+        "player_name": "Noel Acciari",
+        "player_id": 8478569,
+        "team": "PIT",
+        "current_stat": 81,
+        "target_milestone": 100,
+        "needed": 19,
+        "image_url": "https://assets.nhle.com/mugs/nhl/20252026/PIT/8478569.png",
+        "stat_type": "goals",
+        "season_avg": 0.19,
+        "last_5_avg": 0.4,
+        "next_game": null
+    },
+    {
+        "player_name": "Nick Cousins",
+        "player_id": 8476393,
+        "team": "OTT",
+        "current_stat": 86,
+        "target_milestone": 100,
+        "needed": 14,
+        "image_url": "https://assets.nhle.com/mugs/nhl/20252026/OTT/8476393.png",
+        "stat_type": "goals",
+        "season_avg": 0.11,
+        "last_5_avg": 0.0,
+        "next_game": {
+            "opponent": "TOR",
+            "date": "Wed, Apr 15 @ 11:30 PM",
+            "is_home": true
+        }
+    },
+    {
+        "player_name": "Mike Matheson",
+        "player_id": 8476875,
+        "team": "MTL",
+        "current_stat": 81,
+        "target_milestone": 100,
+        "needed": 19,
+        "image_url": "https://assets.nhle.com/mugs/nhl/20252026/MTL/8476875.png",
+        "stat_type": "goals",
+        "season_avg": 0.09,
+        "last_5_avg": 0.0,
+        "next_game": null
+    },
+    {
+        "player_name": "Jake DeBrusk",
+        "player_id": 8478498,
+        "team": "VAN",
+        "current_stat": 187,
+        "target_milestone": 200,
+        "needed": 13,
+        "image_url": "https://assets.nhle.com/mugs/nhl/20252026/VAN/8478498.png",
+        "stat_type": "goals",
+        "season_avg": 0.29,
+        "last_5_avg": 0.8,
+        "next_game": {
+            "opponent": "EDM",
+            "date": "Fri, Apr 17 @ 01:00 AM",
+            "is_home": false
+        }
+    },
+    {
+        "player_name": "John Klingberg",
+        "player_id": 8475906,
+        "team": "SJS",
+        "current_stat": 92,
+        "target_milestone": 100,
+        "needed": 8,
+        "image_url": "https://assets.nhle.com/mugs/nhl/20252026/SJS/8475906.png",
+        "stat_type": "goals",
+        "season_avg": 0.18,
+        "last_5_avg": 0.0,
+        "next_game": {
+            "opponent": "CHI",
+            "date": "Thu, Apr 16 @ 12:30 AM",
+            "is_home": false
+        }
+    },
+    {
+        "player_name": "Darnell Nurse",
+        "player_id": 8477498,
+        "team": "EDM",
+        "current_stat": 88,
+        "target_milestone": 100,
+        "needed": 12,
+        "image_url": "https://assets.nhle.com/mugs/nhl/20252026/EDM/8477498.png",
+        "stat_type": "goals",
+        "season_avg": 0.09,
+        "last_5_avg": 0.0,
+        "next_game": {
+            "opponent": "VAN",
+            "date": "Fri, Apr 17 @ 01:00 AM",
+            "is_home": true
+        }
+    },
+    {
+        "player_name": "Kaapo Kakko",
+        "player_id": 8481554,
+        "team": "SEA",
+        "current_stat": 84,
+        "target_milestone": 100,
+        "needed": 16,
+        "image_url": "https://assets.nhle.com/mugs/nhl/20252026/SEA/8481554.png",
+        "stat_type": "goals",
+        "season_avg": 0.21,
+        "last_5_avg": 0.0,
+        "next_game": {
+            "opponent": "VGK",
+            "date": "Thu, Apr 16 @ 02:00 AM",
+            "is_home": false
+        }
+    },
+    {
+        "player_name": "Brayden Schenn",
+        "player_id": 8475170,
+        "team": "NYI",
+        "current_stat": 296,
+        "target_milestone": 300,
+        "needed": 4,
+        "image_url": "https://assets.nhle.com/mugs/nhl/20252026/NYI/8475170.png",
+        "stat_type": "goals",
+        "season_avg": 0.23,
+        "last_5_avg": 0.2,
+        "next_game": null
+    },
+    {
+        "player_name": "Mattias Janmark",
+        "player_id": 8477406,
+        "team": "EDM",
+        "current_stat": 83,
+        "target_milestone": 100,
+        "needed": 17,
+        "image_url": "https://assets.nhle.com/mugs/nhl/20252026/EDM/8477406.png",
+        "stat_type": "goals",
+        "season_avg": 0.02,
+        "last_5_avg": 0.0,
+        "next_game": {
+            "opponent": "VAN",
+            "date": "Fri, Apr 17 @ 01:00 AM",
+            "is_home": true
+        }
+    },
+    {
+        "player_name": "JJ Peterka",
+        "player_id": 8482175,
+        "team": "UTA",
+        "current_stat": 92,
+        "target_milestone": 100,
+        "needed": 8,
+        "image_url": "https://assets.nhle.com/mugs/nhl/20252026/UTA/8482175.png",
+        "stat_type": "goals",
+        "season_avg": 0.31,
+        "last_5_avg": 0.4,
+        "next_game": {
+            "opponent": "STL",
+            "date": "Thu, Apr 16 @ 11:30 PM",
+            "is_home": true
+        }
+    },
+    {
+        "player_name": "Ryan McDonagh",
+        "player_id": 8474151,
+        "team": "TBL",
+        "current_stat": 86,
+        "target_milestone": 100,
+        "needed": 14,
+        "image_url": "https://assets.nhle.com/mugs/nhl/20252026/TBL/8474151.png",
+        "stat_type": "goals",
+        "season_avg": 0.12,
+        "last_5_avg": 0.0,
+        "next_game": {
+            "opponent": "NYR",
+            "date": "Wed, Apr 15 @ 11:00 PM",
+            "is_home": true
+        }
+    },
+    {
+        "player_name": "Jeff Petry",
+        "player_id": 8473507,
+        "team": "MIN",
+        "current_stat": 96,
+        "target_milestone": 100,
+        "needed": 4,
+        "image_url": "https://assets.nhle.com/mugs/nhl/20252026/MIN/8473507.png",
+        "stat_type": "goals",
+        "season_avg": 0.0,
+        "last_5_avg": 0.0,
+        "next_game": null
+    },
+    {
         "player_name": "Sam Bennett",
         "player_id": 8477935,
         "team": "FLA",
@@ -1068,6 +936,57 @@
             "opponent": "DET",
             "date": "Wed, Apr 15 @ 11:00 PM",
             "is_home": true
+        }
+    },
+    {
+        "player_name": "Pius Suter",
+        "player_id": 8480459,
+        "team": "STL",
+        "current_stat": 95,
+        "target_milestone": 100,
+        "needed": 5,
+        "image_url": "https://assets.nhle.com/mugs/nhl/20252026/STL/8480459.png",
+        "stat_type": "goals",
+        "season_avg": 0.21,
+        "last_5_avg": 0.0,
+        "next_game": {
+            "opponent": "UTA",
+            "date": "Thu, Apr 16 @ 11:30 PM",
+            "is_home": false
+        }
+    },
+    {
+        "player_name": "Mikael Granlund",
+        "player_id": 8475798,
+        "team": "ANA",
+        "current_stat": 198,
+        "target_milestone": 200,
+        "needed": 2,
+        "image_url": "https://assets.nhle.com/mugs/nhl/20252026/ANA/8475798.png",
+        "stat_type": "goals",
+        "season_avg": 0.33,
+        "last_5_avg": 0.0,
+        "next_game": {
+            "opponent": "NSH",
+            "date": "Fri, Apr 17 @ 12:00 AM",
+            "is_home": false
+        }
+    },
+    {
+        "player_name": "William Nylander",
+        "player_id": 8477939,
+        "team": "TOR",
+        "current_stat": 291,
+        "target_milestone": 300,
+        "needed": 9,
+        "image_url": "https://assets.nhle.com/mugs/nhl/20252026/TOR/8477939.png",
+        "stat_type": "goals",
+        "season_avg": 0.45,
+        "last_5_avg": 0.6,
+        "next_game": {
+            "opponent": "OTT",
+            "date": "Wed, Apr 15 @ 11:30 PM",
+            "is_home": false
         }
     }
 ]
